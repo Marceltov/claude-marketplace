@@ -2,7 +2,7 @@
 
 A curated marketplace of the Claude Code plugins I actually use every day.
 
-Every entry points at its upstream repository — nothing is vendored or forked here. This repo is just the index.
+Most entries point at their upstream repository — nothing is forked or vendored. The exception is `markdown-style`, which is developed here under `plugins/` and distributed from this repo.
 
 ## Install
 
@@ -13,6 +13,7 @@ Every entry points at its upstream repository — nothing is vendored or forked 
 Then install what you want:
 
 ```bash
+/plugin install markdown-style@marceltov
 /plugin install superpowers@marceltov
 /plugin install context7@marceltov
 /plugin install frontend-design@marceltov
@@ -27,6 +28,7 @@ Or browse interactively with `/plugin`.
 
 | Plugin | What it does | Upstream |
 | --- | --- | --- |
+| `markdown-style` | Keeps Markdown prose unwrapped so a one-word edit never reflows a whole paragraph. | [this repo](plugins/markdown-style) |
 | `superpowers` | Brainstorming, subagent-driven development, systematic debugging, red/green TDD, and skill authoring. | [obra/superpowers](https://github.com/obra/superpowers) |
 | `context7` | MCP server that pulls version-specific library docs straight from source repos into context. | [Upstash Context7](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/context7) |
 | `frontend-design` | Production-grade frontend interfaces that avoid generic AI aesthetics. | [Anthropic](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design) |
@@ -38,7 +40,7 @@ Or browse interactively with `/plugin`.
 
 ## Updating
 
-Plugins track their upstream default branch, so they are not pinned to a commit. To pull the latest versions:
+Plugins hosted elsewhere track their upstream default branch, so they are not pinned to a commit. To pull the latest versions:
 
 ```bash
 /plugin marketplace update marceltov
@@ -54,6 +56,9 @@ Append an entry to the `plugins` array in `.claude-plugin/marketplace.json`. The
 Source shapes used here:
 
 ```jsonc
+// plugin developed in this repo, under plugins/
+{ "source": "./plugins/thing" }
+
 // plugin at the root of its own repo
 { "source": "github", "repo": "owner/repo" }
 

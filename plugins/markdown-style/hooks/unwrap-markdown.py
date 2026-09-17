@@ -31,6 +31,8 @@ REFDEF = re.compile(r"^\s{0,3}\[[^\]]+\]:\s")
 INDENTED_CODE = re.compile(r"^(\s{4,}|\t)")
 HARD_BREAK = re.compile(r"(\s\s|\\)$")
 
+MARKDOWN_SUFFIXES = (".md", ".markdown")
+
 
 def unwrap(text):
     lines = text.split("\n")
@@ -120,26 +122,41 @@ def main(paths):
     return changed
 
 
+def hook_mode():
+    """Run as a PostToolUse hook: read the payload on stdin, unwrap, reply."""
+    try:
+        payload = json.load(sys.stdin)
+    except (ValueError, OSError):
+        return
+    response = payload.get("tool_response")
+    tool_input = payload.get("tool_input")
+    path = None
+    if isinstance(response, dict):
+        path = response.get("filePath")
+    if not path and isinstance(tool_input, dict):
+        path = tool_input.get("file_path")
+    if not isinstance(path, str) or not path.lower().endswith(MARKDOWN_SUFFIXES):
+        return
+    if not main([path]):
+        return
+    name = os.path.basename(path)
+    print(json.dumps({
+        "systemMessage": "Unwrapped hard-wrapped Markdown in " + name,
+        "hookSpecificOutput": {
+            "hookEventName": "PostToolUse",
+            "additionalContext": (
+                "Reformatted " + name + ": paragraphs, list items, table rows "
+                "and blockquotes were rejoined into single lines. Re-read the "
+                "file before editing it again, and write prose unwrapped."
+            ),
+        },
+    }))
+
+
 if __name__ == "__main__":
     args = sys.argv[1:]
-    # --hook emits the PostToolUse JSON Claude Code expects, so Claude is told
-    # to re-read a file this rewrote out from under it.
-    as_hook = "--hook" in args
-    changed = main([a for a in args if a != "--hook"])
-    if not changed:
-        sys.exit(0)
-    if as_hook:
-        names = ", ".join(os.path.basename(c) for c in changed)
-        print(json.dumps({
-            "systemMessage": "Unwrapped hard-wrapped prose in " + names,
-            "hookSpecificOutput": {
-                "hookEventName": "PostToolUse",
-                "additionalContext": (
-                    "Reformatted " + names + ": paragraphs, list items and table "
-                    "rows were rejoined into single lines. Re-read the file "
-                    "before editing it again, and keep prose unwrapped."
-                ),
-            },
-        }))
+    if "--hook" in args:
+        hook_mode()
     else:
-        print("\n".join(changed))
+        for path in main(args):
+            print(path)
