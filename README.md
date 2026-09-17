@@ -2,18 +2,18 @@
 
 A curated marketplace of the Claude Code plugins I actually use every day.
 
-Every entry points at its upstream repository — nothing is vendored or forked
-here. This repo is just the index.
+Most entries point at their upstream repository — nothing is forked or vendored. The exception is `markdown-style`, which is developed here under `plugins/` and distributed from this repo.
 
 ## Install
 
 ```bash
-/plugin marketplace add marceltov/claude-marketplace
+/plugin marketplace add Marceltov/claude-marketplace
 ```
 
 Then install what you want:
 
 ```bash
+/plugin install markdown-style@marceltov
 /plugin install superpowers@marceltov
 /plugin install context7@marceltov
 /plugin install frontend-design@marceltov
@@ -28,6 +28,7 @@ Or browse interactively with `/plugin`.
 
 | Plugin | What it does | Upstream |
 | --- | --- | --- |
+| `markdown-style` | Keeps Markdown prose unwrapped so a one-word edit never reflows a whole paragraph. | [this repo](plugins/markdown-style) |
 | `superpowers` | Brainstorming, subagent-driven development, systematic debugging, red/green TDD, and skill authoring. | [obra/superpowers](https://github.com/obra/superpowers) |
 | `context7` | MCP server that pulls version-specific library docs straight from source repos into context. | [Upstash Context7](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/context7) |
 | `frontend-design` | Production-grade frontend interfaces that avoid generic AI aesthetics. | [Anthropic](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design) |
@@ -35,30 +36,29 @@ Or browse interactively with `/plugin`.
 | `i-have-adhd` | ADHD-friendly output: next action first, numbered steps, no tangents. | [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) |
 | `notfair` | Ads, analytics, SEO and GEO workflows (Google/Meta/TikTok Ads, GA4, Search Console, WordPress). | [nowork-studio/notfair-plugin](https://github.com/nowork-studio/notfair-plugin) |
 
-> The plugin upstream calls itself `notfair`, not `not-fair` — plugin names must
-> match the upstream `plugin.json`, so that is the name used here.
+> The plugin upstream calls itself `notfair`, not `not-fair` — plugin names must match the upstream `plugin.json`, so that is the name used here.
 
 ## Updating
 
-Plugins track their upstream default branch, so they are not pinned to a commit.
-To pull the latest versions:
+Plugins hosted elsewhere track their upstream default branch, so they are not pinned to a commit. To pull the latest versions:
 
 ```bash
 /plugin marketplace update marceltov
 /plugin update
 ```
 
-To freeze a plugin instead, add a 40-character `sha` (and optionally a `ref`) to
-its `source` object in `.claude-plugin/marketplace.json`.
+To freeze a plugin instead, add a 40-character `sha` (and optionally a `ref`) to its `source` object in `.claude-plugin/marketplace.json`.
 
 ## Adding a plugin
 
-Append an entry to the `plugins` array in `.claude-plugin/marketplace.json`. The
-`name` must match the `name` in the upstream plugin's `.claude-plugin/plugin.json`.
+Append an entry to the `plugins` array in `.claude-plugin/marketplace.json`. The `name` must match the `name` in the upstream plugin's `.claude-plugin/plugin.json`.
 
 Source shapes used here:
 
 ```jsonc
+// plugin developed in this repo, under plugins/
+{ "source": "./plugins/thing" }
+
 // plugin at the root of its own repo
 { "source": "github", "repo": "owner/repo" }
 
@@ -74,5 +74,4 @@ claude plugin validate .
 
 ## License
 
-MIT — see [LICENSE](LICENSE). The plugins themselves are licensed by their
-respective upstream authors.
+MIT — see [LICENSE](LICENSE). The plugins themselves are licensed by their respective upstream authors.
