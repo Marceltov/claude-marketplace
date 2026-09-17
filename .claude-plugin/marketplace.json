@@ -101,6 +101,23 @@
       "tags": ["design", "ui", "canvas", "frontend"]
     },
     {
+      "name": "trilium",
+      "description": "Claude Code plugin for Trilium: skills for working with your notes, plus the MCP connection to a running trilium-mcp sidecar server.",
+      "source": {
+        "source": "github",
+        "repo": "Marceltov/trilium-plugin"
+      },
+      "author": {
+        "name": "Marcel Bruckner",
+        "url": "https://github.com/marceltov"
+      },
+      "homepage": "https://github.com/Marceltov/trilium-plugin",
+      "repository": "https://github.com/Marceltov/trilium-plugin",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": ["trilium", "notes", "mcp", "skills"]
+    },
+    {
       "name": "ponytail",
       "description": "Lazy senior dev mode. Forces the simplest, shortest solution that actually works: YAGNI, stdlib first, no unrequested abstractions.",
       "source": {
