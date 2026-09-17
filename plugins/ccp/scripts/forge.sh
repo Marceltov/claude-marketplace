@@ -7,7 +7,7 @@
 # github.com and gitlab.com.
 set -euo pipefail
 
-ACTION="${1:?usage: forge.sh <issues|actions|prs|pr|repo>}"
+ACTION="${1:?usage: forge.sh <issues|actions|prs|pr|repo|project>}"
 
 open_url() {
   local url="$1"
@@ -42,11 +42,13 @@ case "$forge:$ACTION" in
   gh:prs) gh pr list --web ;;
   gh:pr) gh pr view ;;
   gh:repo) gh repo view --web ;;
+  gh:project) gh browse --projects ;;
   glab:issues) open_url "$(glab_web_url)/-/issues" ;;
   glab:actions) open_url "$(glab_web_url)/-/pipelines" ;;
   glab:prs) open_url "$(glab_web_url)/-/merge_requests" ;;
   glab:pr) glab mr view ;;
   glab:repo) glab repo view --web ;;
+  glab:project) open_url "$(glab_web_url)/-/boards" ;;
   *)
     echo "Unknown action: $ACTION" >&2
     exit 1

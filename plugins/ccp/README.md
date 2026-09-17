@@ -38,8 +38,13 @@ Five slash commands, all backed by `scripts/forge.sh`, which detects GitHub vs G
 | `/prs` | `gh pr list --web` | opens `<repo>/-/merge_requests` |
 | `/pr` | `gh pr view` (terminal) | `glab mr view` (terminal) |
 | `/repo` | `gh repo view --web` | `glab repo view --web` |
+| `/project` | `gh browse --projects` | opens `<repo>/-/boards` |
 
-`/issues`, `/actions`, `/prs`, and `/repo` open a browser tab; `/pr` prints the current branch's PR/MR to the terminal instead, since that one's about a quick status check, not a page to open. `glab` has no `--web` flag on `issue list`/`mr list`, so those two cases open a URL directly via `open`/`xdg-open` (falling back to Python's `webbrowser` module, or just printing the URL if neither is available).
+`/issues`, `/actions`, `/prs`, `/repo`, and `/project` open a browser tab; `/pr` prints the current branch's PR/MR to the terminal instead, since that one's about a quick status check, not a page to open. `glab` has no `--web` flag on `issue list`/`mr list`, so those two cases open a URL directly via `open`/`xdg-open` (falling back to Python's `webbrowser` module, or just printing the URL if neither is available). GitLab has no direct equivalent of GitHub Projects; `/project` opens the closest thing, its issue board.
+
+## The resolve-conflicts skill
+
+Ask to "resolve conflicts", "sync this branch with main", or similar, and this skill brings the current branch into a mergeable state without merging the PR/MR itself. `scripts/sync-branch.sh` handles the mechanical half — find the target branch (the open PR/MR's base, or the repo default), fetch it, attempt `git merge --no-edit`. If that conflicts, the skill resolves each file with judgment: trivial cases (lockfiles, changelogs, generated files) get resolved directly, but a conflict that changes logic on both sides gets described to the user instead of guessed at. See `docs/adr/0003` for why it draws the line there.
 
 ## License
 
