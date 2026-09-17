@@ -2,13 +2,12 @@
 
 A curated marketplace of the Claude Code plugins I actually use every day.
 
-Every entry points at its upstream repository — nothing is vendored or forked
-here. This repo is just the index.
+Every entry points at its upstream repository — nothing is vendored or forked here. This repo is just the index.
 
 ## Install
 
 ```bash
-/plugin marketplace add marceltov/claude-marketplace
+/plugin marketplace add Marceltov/claude-marketplace
 ```
 
 Then install what you want:
@@ -35,26 +34,22 @@ Or browse interactively with `/plugin`.
 | `i-have-adhd` | ADHD-friendly output: next action first, numbered steps, no tangents. | [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) |
 | `notfair` | Ads, analytics, SEO and GEO workflows (Google/Meta/TikTok Ads, GA4, Search Console, WordPress). | [nowork-studio/notfair-plugin](https://github.com/nowork-studio/notfair-plugin) |
 
-> The plugin upstream calls itself `notfair`, not `not-fair` — plugin names must
-> match the upstream `plugin.json`, so that is the name used here.
+> The plugin upstream calls itself `notfair`, not `not-fair` — plugin names must match the upstream `plugin.json`, so that is the name used here.
 
 ## Updating
 
-Plugins track their upstream default branch, so they are not pinned to a commit.
-To pull the latest versions:
+Plugins track their upstream default branch, so they are not pinned to a commit. To pull the latest versions:
 
 ```bash
 /plugin marketplace update marceltov
 /plugin update
 ```
 
-To freeze a plugin instead, add a 40-character `sha` (and optionally a `ref`) to
-its `source` object in `.claude-plugin/marketplace.json`.
+To freeze a plugin instead, add a 40-character `sha` (and optionally a `ref`) to its `source` object in `.claude-plugin/marketplace.json`.
 
 ## Adding a plugin
 
-Append an entry to the `plugins` array in `.claude-plugin/marketplace.json`. The
-`name` must match the `name` in the upstream plugin's `.claude-plugin/plugin.json`.
+Append an entry to the `plugins` array in `.claude-plugin/marketplace.json`. The `name` must match the `name` in the upstream plugin's `.claude-plugin/plugin.json`.
 
 Source shapes used here:
 
@@ -74,5 +69,4 @@ claude plugin validate .
 
 ## License
 
-MIT — see [LICENSE](LICENSE). The plugins themselves are licensed by their
-respective upstream authors.
+MIT — see [LICENSE](LICENSE). The plugins themselves are licensed by their respective upstream authors.
