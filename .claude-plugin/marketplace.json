@@ -71,6 +71,22 @@
       "tags": ["frontend", "ui", "css", "design"]
     },
     {
+      "name": "superdesign",
+      "description": "Design or redesign frontend UI and marketing graphics on the Superdesign infinite canvas. Reads your codebase for context, sets up a design system, and generates branchable design drafts you refine.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/superdesigndev/superdesign-skill.git",
+        "sha": "f9f05cd988c247dce6c072eaf9ac6b162f2ffc4b"
+      },
+      "author": {
+        "name": "Superdesign dev, Inc."
+      },
+      "homepage": "https://superdesign.dev",
+      "repository": "https://github.com/superdesigndev/superdesign-skill",
+      "category": "design",
+      "tags": ["design", "ui", "canvas", "frontend"]
+    },
+    {
       "name": "ponytail",
       "description": "Lazy senior dev mode. Forces the simplest, shortest solution that actually works: YAGNI, stdlib first, no unrequested abstractions.",
       "source": {
