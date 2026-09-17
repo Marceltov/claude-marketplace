@@ -1,12 +1,12 @@
-# ship-pr
+# ccp
 
-Ships uncommitted work end to end: branch, commit, PR, an ADR when the change is architecturally significant, and a merge that only happens after you explicitly confirm it. A `Stop` hook nudges you when work is left unshipped; it never acts on its own.
+Code Collaboration Platform toolkit. The `ship-pr` skill ships uncommitted work end to end: branch, commit, PR, an ADR when the change is architecturally significant, and a merge that only happens after you explicitly confirm it. A `Stop` hook nudges you when work is left unshipped; it never acts on its own. Slash commands round it out with one-shot GitHub/GitLab project-management views.
 
 ## Install
 
 ```bash
 /plugin marketplace add Marceltov/claude-marketplace
-/plugin install ship-pr@marceltov
+/plugin install ccp@marceltov
 ```
 
 ## What it does

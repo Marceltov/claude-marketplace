@@ -7,7 +7,7 @@ date: 2026-09-17
 
 ## Context and Problem Statement
 
-`ship-pr` needed a handful of one-shot project-management lookups — open the issues list, open CI/CD runs, open the PR/MR list, show the current branch's PR/MR, open the repo home page — that work the same way against either GitHub or GitLab. Each one is a fixed action with no branching logic once the forge is known, and the repo could be on either forge without saying so up front.
+`ccp` needed a handful of one-shot project-management lookups — open the issues list, open CI/CD runs, open the PR/MR list, show the current branch's PR/MR, open the repo home page — that work the same way against either GitHub or GitLab. Each one is a fixed action with no branching logic once the forge is known, and the repo could be on either forge without saying so up front.
 
 ## Considered Options
 
@@ -19,7 +19,7 @@ date: 2026-09-17
 
 Chosen option: "slash commands with inline `` !`cmd` `` execution", because these are fixed lookups with no judgment call to make — the same script and argument should run every time a given command is typed, not something Claude decides how to approach per request. A skill would reintroduce exactly the non-determinism this doesn't need. The official MCP servers were ruled out for a different reason: they're remote API wrappers and have no way to open a window in the user's local browser, which is what four of the five commands need to do.
 
-Forge detection (`plugins/ship-pr/scripts/forge.sh`) asks `gh repo view` and `glab repo view` directly whether either recognizes the current repo, rather than pattern-matching the remote URL for "github"/"gitlab" — this also covers self-hosted GitHub Enterprise and GitLab instances, which a URL substring check would miss.
+Forge detection (`plugins/ccp/scripts/forge.sh`) asks `gh repo view` and `glab repo view` directly whether either recognizes the current repo, rather than pattern-matching the remote URL for "github"/"gitlab" — this also covers self-hosted GitHub Enterprise and GitLab instances, which a URL substring check would miss.
 
 ### Consequences
 
