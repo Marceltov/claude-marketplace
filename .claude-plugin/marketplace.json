@@ -23,7 +23,7 @@
     },
     {
       "name": "ship-pr",
-      "description": "Ships uncommitted work end to end: branch, commit, PR, an ADR when the change is architecturally significant, and a merge that only happens after you explicitly confirm it. A Stop hook nudges you when work is left unshipped, without acting on its own.",
+      "description": "Ships uncommitted work end to end: branch, commit, PR, an ADR when the change is architecturally significant, and a merge that only happens after you explicitly confirm it. A Stop hook nudges you when work is left unshipped, without acting on its own. Also adds /issues, /actions, /prs, /pr and /repo commands that open the matching GitHub or GitLab view via gh or glab.",
       "source": "./plugins/ship-pr",
       "author": {
         "name": "Marcel Bruckner",
@@ -33,7 +33,7 @@
       "repository": "https://github.com/Marceltov/claude-marketplace",
       "license": "MIT",
       "category": "development",
-      "tags": ["git", "pull-request", "workflow", "adr", "nudge"]
+      "tags": ["git", "pull-request", "workflow", "adr", "nudge", "github", "gitlab"]
     },
     {
       "name": "superpowers",
