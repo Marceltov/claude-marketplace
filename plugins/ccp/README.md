@@ -46,6 +46,14 @@ Five slash commands, all backed by `scripts/forge.sh`, which detects GitHub vs G
 
 Ask to "resolve conflicts", "sync this branch with main", or similar, and this skill brings the current branch into a mergeable state without merging the PR/MR itself. `scripts/sync-branch.sh` handles the mechanical half — find the target branch (the open PR/MR's base, or the repo default), fetch it, attempt `git merge --no-edit`. If that conflicts, the skill resolves each file with judgment: trivial cases (lockfiles, changelogs, generated files) get resolved directly, but a conflict that changes logic on both sides gets described to the user instead of guessed at. See `docs/adr/0003` for why it draws the line there.
 
+## The triage-issues skill
+
+Ask "show me the issues," "what should I work on," "triage the backlog," or similar. Fetches open issues (GitHub or GitLab) — or the linked GitHub Project's items, if you ask for "project"/"board" specifically — groups and sorts them for triage (bugs before enhancements, unassigned before already-claimed, labels/milestones over raw recency), and summarizes each with what doing it would actually involve, not just its title. Ends by asking which one to start on.
+
+Pick one and it hands off into `ship-pr`: names a branch from the issue (`<number>-<slug>`), runs `ship-pr`'s branch step with that name, and the rest of that skill proceeds as normal — confirm-gated merge included. When the PR gets opened, its body includes a closing reference (`Closes #<number>`) back to the issue.
+
+GitLab's issue board has no JSON-listing command in `glab`, so project/board mode is GitHub-only for now; GitLab always uses the plain issue list.
+
 ## License
 
 MIT, same as the marketplace.
