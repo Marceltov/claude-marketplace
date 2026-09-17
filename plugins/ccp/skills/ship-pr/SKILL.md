@@ -60,7 +60,7 @@ EOF
 )"
 ```
 
-Follow this session's existing PR conventions (attribution trailer, no placeholder sections). Report the PR URL back to the user.
+Follow this session's existing PR conventions (attribution trailer, no placeholder sections). If this work started from a specific issue (e.g. handed off from `triage-issues`), include a closing reference in the body — `Closes #<number>` on GitHub, `Closes #<iid>` on GitLab — so merging the PR closes the issue automatically. Report the PR URL back to the user.
 
 ## 5. Confirm, then merge
 

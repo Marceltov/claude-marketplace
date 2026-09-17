@@ -22,18 +22,18 @@
       "tags": ["markdown", "formatting", "prose", "diffs"]
     },
     {
-      "name": "ship-pr",
-      "description": "Ships uncommitted work end to end: branch, commit, PR, an ADR when the change is architecturally significant, and a merge that only happens after you explicitly confirm it. A Stop hook nudges you when work is left unshipped, without acting on its own.",
-      "source": "./plugins/ship-pr",
+      "name": "ccp",
+      "description": "Code Collaboration Platform toolkit: the ship-pr skill ships uncommitted work end to end (branch, commit, PR, an ADR when architecturally significant, and a merge that only happens after you explicitly confirm it), the resolve-conflicts skill syncs a branch with its target and resolves conflicts into a mergeable state, the triage-issues skill fetches and ranks open issues/project items and hands a picked one to ship-pr, a Stop hook nudges you when work is left unshipped, and /issues, /actions, /prs, /pr, /repo and /project commands open the matching GitHub or GitLab view via gh or glab.",
+      "source": "./plugins/ccp",
       "author": {
         "name": "Marcel Bruckner",
         "url": "https://github.com/marceltov"
       },
-      "homepage": "https://github.com/Marceltov/claude-marketplace/tree/main/plugins/ship-pr",
+      "homepage": "https://github.com/Marceltov/claude-marketplace/tree/main/plugins/ccp",
       "repository": "https://github.com/Marceltov/claude-marketplace",
       "license": "MIT",
       "category": "development",
-      "tags": ["git", "pull-request", "workflow", "adr", "nudge"]
+      "tags": ["git", "pull-request", "workflow", "adr", "nudge", "github", "gitlab"]
     },
     {
       "name": "superpowers",
