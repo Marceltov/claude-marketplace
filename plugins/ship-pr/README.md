@@ -1,6 +1,6 @@
 # ship-pr
 
-Ships uncommitted work end to end: branch, commit, PR, an ADR when the change is architecturally significant, and a merge that only happens after you explicitly confirm it.
+Ships uncommitted work end to end: branch, commit, PR, an ADR when the change is architecturally significant, and a merge that only happens after you explicitly confirm it. A `Stop` hook nudges you when work is left unshipped; it never acts on its own.
 
 ## Install
 
@@ -22,6 +22,10 @@ Ask for "ship this", "open a PR for this work", or similar, and the `ship-pr` sk
 ## Why the confirm gate
 
 Everything up to opening the PR is easy to undo — close the PR, delete the branch. Merging isn't, so it gets its own explicit approval every time, never inherited from an earlier "go ahead."
+
+## The nudge hook
+
+A `Stop` hook (`hooks/nudge-ship.py`) runs after every turn and checks for uncommitted changes, or a branch that's ahead of the default branch with no open PR. If it finds either, it shows a `systemMessage` — a warning printed to the user, not fed into Claude's context — suggesting the `ship-pr` skill. It never branches, commits, opens a PR, or merges by itself; it only ever surfaces a reminder. It stays quiet once a PR is already open and the tree is clean.
 
 ## License
 

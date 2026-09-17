@@ -31,7 +31,7 @@ Or browse interactively with `/plugin`.
 | Plugin | What it does | Upstream |
 | --- | --- | --- |
 | `markdown-style` | Keeps Markdown prose unwrapped so a one-word edit never reflows a whole paragraph. | [this repo](plugins/markdown-style) |
-| `ship-pr` | Branch, commit, PR, an ADR when warranted, and a merge that waits for explicit confirmation. | [this repo](plugins/ship-pr) |
+| `ship-pr` | Branch, commit, PR, an ADR when warranted, and a merge that waits for explicit confirmation; nudges you when work is left unshipped. | [this repo](plugins/ship-pr) |
 | `superpowers` | Brainstorming, subagent-driven development, systematic debugging, red/green TDD, and skill authoring. | [obra/superpowers](https://github.com/obra/superpowers) |
 | `context7` | MCP server that pulls version-specific library docs straight from source repos into context. | [Upstash Context7](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/context7) |
 | `frontend-design` | Production-grade frontend interfaces that avoid generic AI aesthetics. | [Anthropic](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design) |

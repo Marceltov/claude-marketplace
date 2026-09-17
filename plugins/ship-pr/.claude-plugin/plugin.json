@@ -1,6 +1,6 @@
 {
   "name": "ship-pr",
-  "description": "Ships uncommitted work end to end: branch, commit, PR, an ADR when the change is architecturally significant, and a merge that only happens after you explicitly confirm it.",
+  "description": "Ships uncommitted work end to end: branch, commit, PR, an ADR when the change is architecturally significant, and a merge that only happens after you explicitly confirm it. A Stop hook nudges you when work is left unshipped, without acting on its own.",
   "version": "1.0.0",
   "author": {
     "name": "Marcel Bruckner",

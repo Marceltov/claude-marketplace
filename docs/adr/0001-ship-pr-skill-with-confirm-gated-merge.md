@@ -41,3 +41,12 @@ Chosen option: "a skill", because the requests this replaces ("ship this," "open
 ### No packaging
 
 * Bad, because every run re-derives the same sequence, and it is where the branch-reuse mistake made during this session's own dogfooding actually happened.
+
+## More Information
+
+A follow-up question was whether the whole sequence, not just its invocation, could be automated further via a `Stop` hook (fires when Claude finishes a turn) instead of relying on the user to ask for the skill. Three shapes were considered for that hook: silently run the full branch → commit → PR → merge sequence on its own; block the turn from ending (`decision: "block"`) until it ran; or only surface a reminder and take no action itself.
+
+The first two were rejected. Auto-running the sequence would merge without the per-PR confirmation this ADR's decision exists to guarantee. Blocking the turn was also rejected once it turned out `hookSpecificOutput.additionalContext` on the `Stop` event is not a silent passthrough the way it is on `PostToolUse` or `SessionStart` — on `Stop` it forces another turn, subject to the same loop protection as `decision: "block"` — so using it here would turn a passive reminder into an unrequested continuation.
+
+The chosen shape uses `systemMessage` only: a warning shown to the user in the terminal that never enters Claude's context and never blocks the stop. It's implemented as `hooks/nudge-ship.py`, registered on `Stop`, and checks for uncommitted changes or a branch ahead of the default branch with no open PR. It changes nothing by itself.
+
