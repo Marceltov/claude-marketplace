@@ -2,7 +2,7 @@
 
 A curated marketplace of the Claude Code plugins I actually use every day.
 
-Most entries point at their upstream repository — nothing is forked or vendored. The exception is `markdown-style`, which is developed here under `plugins/` and distributed from this repo.
+Most entries point at their upstream repository — nothing is forked or vendored. The exceptions are `markdown-style` and `ship-pr`, developed here under `plugins/` and distributed from this repo.
 
 ## Install
 
@@ -14,9 +14,11 @@ Then install what you want:
 
 ```bash
 /plugin install markdown-style@marceltov
+/plugin install ship-pr@marceltov
 /plugin install superpowers@marceltov
 /plugin install context7@marceltov
 /plugin install frontend-design@marceltov
+/plugin install superdesign@marceltov
 /plugin install ponytail@marceltov
 /plugin install i-have-adhd@marceltov
 /plugin install notfair@marceltov
@@ -29,9 +31,11 @@ Or browse interactively with `/plugin`.
 | Plugin | What it does | Upstream |
 | --- | --- | --- |
 | `markdown-style` | Keeps Markdown prose unwrapped so a one-word edit never reflows a whole paragraph. | [this repo](plugins/markdown-style) |
+| `ship-pr` | Branch, commit, PR, an ADR when warranted, and a merge that waits for explicit confirmation; nudges you when work is left unshipped. | [this repo](plugins/ship-pr) |
 | `superpowers` | Brainstorming, subagent-driven development, systematic debugging, red/green TDD, and skill authoring. | [obra/superpowers](https://github.com/obra/superpowers) |
 | `context7` | MCP server that pulls version-specific library docs straight from source repos into context. | [Upstash Context7](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/context7) |
 | `frontend-design` | Production-grade frontend interfaces that avoid generic AI aesthetics. | [Anthropic](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design) |
+| `superdesign` | Design or redesign UI and marketing graphics on the Superdesign infinite canvas. | [Superdesign](https://github.com/superdesigndev/superdesign-skill) |
 | `ponytail` | Lazy senior dev mode: YAGNI, stdlib first, no unrequested abstractions. | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
 | `i-have-adhd` | ADHD-friendly output: next action first, numbered steps, no tangents. | [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) |
 | `notfair` | Ads, analytics, SEO and GEO workflows (Google/Meta/TikTok Ads, GA4, Search Console, WordPress). | [nowork-studio/notfair-plugin](https://github.com/nowork-studio/notfair-plugin) |
