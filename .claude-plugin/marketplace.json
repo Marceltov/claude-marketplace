@@ -1,0 +1,108 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "marceltov",
+  "description": "Marcel's curated set of most-used Claude Code plugins.",
+  "owner": {
+    "name": "Marcel Bruckner",
+    "url": "https://github.com/marceltov"
+  },
+  "plugins": [
+    {
+      "name": "superpowers",
+      "description": "Teaches Claude brainstorming, subagent-driven development with built-in code review, systematic debugging, and red/green TDD. Also teaches Claude how to author and test new skills.",
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers"
+      },
+      "author": {
+        "name": "Jesse Vincent",
+        "url": "https://github.com/obra"
+      },
+      "homepage": "https://github.com/obra/superpowers",
+      "repository": "https://github.com/obra/superpowers",
+      "category": "development",
+      "tags": ["workflow", "tdd", "debugging", "code-review", "skills"]
+    },
+    {
+      "name": "context7",
+      "description": "Upstash Context7 MCP server for up-to-date documentation lookup. Pulls version-specific docs and code examples straight from source repositories into context. Works anonymously; set CONTEXT7_API_KEY for higher rate limits.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "external_plugins/context7",
+        "ref": "main"
+      },
+      "author": {
+        "name": "Upstash"
+      },
+      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/context7",
+      "category": "development",
+      "tags": ["mcp", "documentation", "reference"]
+    },
+    {
+      "name": "frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Generates creative, polished code that avoids generic AI aesthetics.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/frontend-design",
+        "ref": "main"
+      },
+      "author": {
+        "name": "Anthropic",
+        "email": "support@anthropic.com"
+      },
+      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design",
+      "category": "design",
+      "tags": ["frontend", "ui", "css", "design"]
+    },
+    {
+      "name": "ponytail",
+      "description": "Lazy senior dev mode. Forces the simplest, shortest solution that actually works: YAGNI, stdlib first, no unrequested abstractions.",
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      },
+      "author": {
+        "name": "Dietrich Gebert",
+        "url": "https://github.com/DietrichGebert"
+      },
+      "homepage": "https://github.com/DietrichGebert/ponytail",
+      "repository": "https://github.com/DietrichGebert/ponytail",
+      "category": "development",
+      "tags": ["yagni", "simplicity", "code-quality"]
+    },
+    {
+      "name": "i-have-adhd",
+      "description": "Shape Claude Code output for an ADHD reader: lead with the next action, number steps, suppress tangents, restate state, make wins visible.",
+      "source": {
+        "source": "github",
+        "repo": "ayghri/i-have-adhd"
+      },
+      "author": {
+        "name": "Ayoub G.",
+        "url": "https://github.com/ayghri"
+      },
+      "homepage": "https://github.com/ayghri/i-have-adhd",
+      "repository": "https://github.com/ayghri/i-have-adhd",
+      "category": "productivity",
+      "tags": ["output-style", "accessibility", "focus"]
+    },
+    {
+      "name": "notfair",
+      "description": "The official ads, analytics, SEO, and GEO plugin from NotFair. Operate Google, Meta, X, LinkedIn, Reddit, and TikTok Ads; WordPress and GoHighLevel; analyze Google Search Console and GA4; and run open-source search and content workflows.",
+      "source": {
+        "source": "github",
+        "repo": "nowork-studio/notfair-plugin"
+      },
+      "author": {
+        "name": "NotFair",
+        "url": "https://notfair.co"
+      },
+      "homepage": "https://github.com/nowork-studio/notfair-plugin",
+      "repository": "https://github.com/nowork-studio/notfair-plugin",
+      "category": "marketing",
+      "tags": ["seo", "geo", "ads", "analytics", "marketing"]
+    }
+  ]
+}
