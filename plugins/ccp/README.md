@@ -54,6 +54,10 @@ Pick one and it hands off into `ship-pr`: names a branch from the issue (`<numbe
 
 GitLab's issue board has no JSON-listing command in `glab`, so project/board mode is GitHub-only for now; GitLab always uses the plain issue list.
 
+## The propose-skill skill
+
+Ask to "skillify this", "turn this into a skill", "propose a new skill", or similar. Scans the current conversation for a repeatable work pattern (a multi-step procedure, a workaround, something you had to correct or explain twice), proposes a few candidate directions, and lets you pick or steer toward something else. Once you pick, it drafts a full spec — plugin, skill name, description/trigger phrases, workflow steps, source context — and files it as a GitHub issue against `Marceltov/claude-marketplace`, never the repo you're currently in. That's deliberate: skills live in the marketplace repo, and you usually don't have write access there, so this always goes through an issue for a maintainer to pick up, not a direct commit.
+
 ## License
 
 MIT, same as the marketplace.
