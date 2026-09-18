@@ -20,6 +20,8 @@ Across multiple repos and multiple issues, it's hard to tell at a glance which c
 
 Chosen option: `<REPONAME> #<issue-number>: <message>` for commit messages and PR titles (e.g. `CLAUDE-MARKETPLACE #6: Add propose-skill skill to ccp`), and `<reponame-lowercase>-<issue-number>-<slug>` for branch names (e.g. `claude-marketplace-6-add-propose-skill`) — same information, formatted for what each field actually tolerates. The issue number is resolved automatically: already known when handed off from `triage-issues` or named directly by the user, otherwise looked up by matching the change against the repo's open issues (`gh issue list` / `glab issue list`). Only when that lookup can't confidently resolve one match does the work ship without a prefix, rather than blocking on a question the user has already said not to ask.
 
+Enforcement mirrors the `markdown-style` plugin's two-layer pattern rather than living only in skill bodies: a `SessionStart` hook (`hooks/naming-convention.py`) injects the convention as standing context from the first turn of every session, so it applies to any branch/commit/PR created in the session, not only ones made by explicitly invoking `ship-pr`/`triage-issues`. Those skills stay the source of truth for the exact commands; the hook only keeps the rule in view.
+
 ### Consequences
 
 * Good, because a commit, branch, or PR can be traced back to its repo and issue by name alone, even out of context (cross-repo dashboards, notifications, `git log` across clones).
