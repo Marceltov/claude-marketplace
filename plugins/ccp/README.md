@@ -19,6 +19,10 @@ Ask for "ship this", "open a PR for this work", or similar, and the `ship-pr` sk
 4. **PR** — opened with `gh pr create`, following the repo's existing PR conventions.
 5. **Merge** — happens only after you say yes to that specific PR. An earlier "go ahead and ship this" authorizes steps 1-4, not the merge.
 
+## Naming convention: `<REPONAME> #<issue-number>`
+
+Every branch, commit message, and PR title gets tied to its repo and issue by name. Commit messages and PR titles are prefixed `<REPONAME> #<issue-number>: <message>` (e.g. `CLAUDE-MARKETPLACE #6: Add propose-skill skill to ccp`); branches use the punctuation-free equivalent `<reponame-lowercase>-<issue-number>-<slug>` (e.g. `claude-marketplace-6-add-propose-skill`), since refs don't tolerate `#`/`:` cleanly. The issue number comes from wherever it's already known (a `triage-issues` handoff, or the user naming one directly) or, failing that, from matching the change against the repo's own open issues — never from asking the user or a placeholder. When no issue can be matched, the work ships with a plain, unprefixed name instead. See `docs/adr/0006` for why.
+
 ## Why the confirm gate
 
 Everything up to opening the PR is easy to undo — close the PR, delete the branch. Merging isn't, so it gets its own explicit approval every time, never inherited from an earlier "go ahead."
@@ -50,7 +54,7 @@ Ask to "resolve conflicts", "sync this branch with main", or similar, and this s
 
 Ask "show me the issues," "what should I work on," "triage the backlog," or similar. Fetches open issues (GitHub or GitLab) — or the linked GitHub Project's items, if you ask for "project"/"board" specifically — groups and sorts them for triage (bugs before enhancements, unassigned before already-claimed, labels/milestones over raw recency), and summarizes each with what doing it would actually involve, not just its title. Ends by asking which one to start on.
 
-Pick one and it hands off into `ship-pr`: names a branch from the issue (`<number>-<slug>`), runs `ship-pr`'s branch step with that name, and the rest of that skill proceeds as normal — confirm-gated merge included. When the PR gets opened, its body includes a closing reference (`Closes #<number>`) back to the issue.
+Pick one and it hands off into `ship-pr`: the issue number is already known, so it skips straight to `ship-pr`'s branch step with it, getting the same `<REPONAME> #<issue-number>` prefix on the branch, commit, and PR — and the rest of that skill proceeds as normal, confirm-gated merge included. When the PR gets opened, its body includes a closing reference (`Closes #<number>`) back to the issue.
 
 GitLab's issue board has no JSON-listing command in `glab`, so project/board mode is GitHub-only for now; GitLab always uses the plain issue list.
 

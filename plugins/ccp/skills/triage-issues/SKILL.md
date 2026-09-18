@@ -53,6 +53,6 @@ One line per issue: number, a short next-step summary, then labels/assignee in p
 
 Once the user picks one:
 
-1. Name a branch from the issue: `<number>-<short-slug-of-title>`.
-2. Run `ship-pr`'s branch step (§1) with that name — everything else in that skill proceeds exactly as it normally would, confirm-gated merge included.
+1. The issue number is already known — skip `ship-pr`'s own issue lookup and go straight to its branch step (§1) with that number, so the branch, commit, and PR all get the `<REPONAME> #<issue-number>` prefix.
+2. Everything else in `ship-pr` proceeds exactly as it normally would, confirm-gated merge included.
 3. When `ship-pr` gets to opening the PR, include a closing reference to the issue in the PR body (`Closes #<number>` on GitHub, `Closes #<iid>` on GitLab) so merging it closes the issue automatically.
