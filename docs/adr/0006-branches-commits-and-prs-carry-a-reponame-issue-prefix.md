@@ -20,7 +20,7 @@ Across multiple repos and multiple issues, it's hard to tell at a glance which c
 
 Chosen option: `<REPONAME> #<issue-number>: <message>` for commit messages and PR titles (e.g. `CLAUDE-MARKETPLACE #6: Add propose-skill skill to ccp`), and `<reponame-lowercase>-<issue-number>-<slug>` for branch names (e.g. `claude-marketplace-6-add-propose-skill`) — same information, formatted for what each field actually tolerates. The issue number is resolved automatically: already known when handed off from `triage-issues` or named directly by the user, otherwise looked up by matching the change against the repo's open issues (`gh issue list` / `glab issue list`). Only when that lookup can't confidently resolve one match does the work ship without a prefix, rather than blocking on a question the user has already said not to ask.
 
-Enforcement mirrors the `markdown-style` plugin's two-layer pattern rather than living only in skill bodies: a `SessionStart` hook (`hooks/naming-convention.py`) injects the convention as standing context from the first turn of every session, so it applies to any branch/commit/PR created in the session, not only ones made by explicitly invoking `ship-pr`/`triage-issues`. Those skills stay the source of truth for the exact commands; the hook only keeps the rule in view.
+Enforcement lives in the `ship-pr` and `triage-issues` skill bodies, which carry the exact commands and apply the convention to everything they create. A `SessionStart` hook (`hooks/naming-convention.py`) also injected it as standing context so it would cover branches/commits/PRs made outside those skills; that hook was removed on 2026-09-22 — see the update below.
 
 ### Consequences
 
@@ -50,3 +50,7 @@ Enforcement mirrors the `markdown-style` plugin's two-layer pattern rather than 
 
 * Good, because it would guarantee 100% prefix coverage, no fallback case.
 * Bad, because it turns every "just ship this" into a forced detour through issue creation/selection, for a convention whose whole point is to reduce friction, not add it.
+
+## More Information
+
+**Update (2026-09-22):** the `SessionStart` hook was removed. It re-injected this convention into every session in every repo, whether or not a branch was ever created, and the rule it injected duplicated text the `ship-pr` and `triage-issues` skill bodies already carry — a second copy to keep in sync for a case (creating a branch by hand, outside either skill) that had not actually come up. The convention itself is unchanged; the skills are now its only home.

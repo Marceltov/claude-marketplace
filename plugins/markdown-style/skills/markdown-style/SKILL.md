@@ -21,33 +21,18 @@ Keep line breaks only where Markdown gives them meaning:
 
 ## Unwrapping an existing file
 
-`hooks/unwrap-markdown.py` rejoins hard-wrapped blocks in place and leaves everything listed above untouched. It is idempotent, so running it on clean files does nothing.
+`scripts/unwrap-markdown.py` rejoins hard-wrapped blocks in place and leaves everything listed above untouched. It is idempotent, so running it on clean files does nothing.
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT}/hooks/unwrap-markdown.py" README.md
+python3 "${CLAUDE_PLUGIN_ROOT}/scripts/unwrap-markdown.py" README.md
 ```
 
 It prints the path of each file it changed and stays silent otherwise, so empty output means the files were already clean. To check a whole repository:
 
 ```bash
-git ls-files '*.md' | xargs python3 "${CLAUDE_PLUGIN_ROOT}/hooks/unwrap-markdown.py"
+git ls-files '*.md' | xargs python3 "${CLAUDE_PLUGIN_ROOT}/scripts/unwrap-markdown.py"
 ```
-
-## How the plugin enforces this
-
-Two layers, because either alone is incomplete:
-
-| Layer | Hook | What it covers |
-| --- | --- | --- |
-| Instruction | `SessionStart` injects the convention as standing context | Prose is written unwrapped in the first place, with no skill invocation needed |
-| Correction | `PostToolUse` on `Write\|Edit` runs the unwrapper | Guarantees the result, and catches Markdown that arrived already wrapped |
-
-When the correction hook reports that it reformatted a file, re-read that file before editing it again — its line numbers have shifted.
 
 ## When this is the wrong convention
 
-Some projects deliberately wrap Markdown at a fixed column and enforce it in CI. In such a repository this plugin fights the house style and will produce large reformatting diffs. Disable it per-project in that repo's `.claude/settings.local.json`:
-
-```json
-{ "enabledPlugins": { "markdown-style@marceltov": false } }
-```
+Some projects deliberately wrap Markdown at a fixed column and enforce it in CI. There this convention fights the house style, and running the unwrapper would produce a large reformatting diff — follow the repo instead.

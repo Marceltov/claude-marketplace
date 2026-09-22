@@ -51,3 +51,5 @@ The first two were rejected. Auto-running the sequence would merge without the p
 The chosen shape uses `systemMessage` only: a warning shown to the user in the terminal that never enters Claude's context and never blocks the stop. It's implemented as `hooks/nudge-ship.py`, registered on `Stop`, and checks for uncommitted changes or a branch ahead of the default branch with no open PR. It changes nothing by itself.
 
 **Update (2026-09-22):** the `Stop` nudge hook described above was removed. The confirm-gated skill itself is unchanged; only the passive reminder is gone. The analysis of the three hook shapes is kept as the record of why a `Stop` hook must never run the sequence or block the turn, should the idea come back.
+
+**Update (2026-09-22, second):** the `markdown-style` plugin's hooks, cited above as the pattern this one mirrored, were removed too — first its `SessionStart` instruction, then its `PostToolUse` unwrapper. Neither plugin registers any hook now; both conventions live in skills, which load only when relevant. The `Stop`-event finding above stands on its own and is what this section is worth keeping for.
