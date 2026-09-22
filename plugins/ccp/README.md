@@ -1,6 +1,6 @@
 # ccp
 
-Code Collaboration Platform toolkit. The `ship-pr` skill ships uncommitted work end to end: branch, commit, PR, an ADR when the change is architecturally significant, and a merge that only happens after you explicitly confirm it. A `SessionStart` hook keeps the `<REPONAME> #<issue-number>` naming convention in context from the first turn; it never acts on its own. Slash commands round it out with one-shot GitHub/GitLab project-management views.
+Code Collaboration Platform toolkit. The `ship-pr` skill ships uncommitted work end to end: branch, commit, PR, an ADR when the change is architecturally significant, and a merge that only happens after you explicitly confirm it. Slash commands round it out with one-shot GitHub/GitLab project-management views.
 
 ## Install
 
@@ -23,7 +23,7 @@ Ask for "ship this", "open a PR for this work", or similar, and the `ship-pr` sk
 
 Every branch, commit message, and PR title gets tied to its repo and issue by name. Commit messages and PR titles are prefixed `<REPONAME> #<issue-number>: <message>` (e.g. `CLAUDE-MARKETPLACE #6: Add propose-skill skill to ccp`); branches use the punctuation-free equivalent `<reponame-lowercase>-<issue-number>-<slug>` (e.g. `claude-marketplace-6-add-propose-skill`), since refs don't tolerate `#`/`:` cleanly. The issue number comes from wherever it's already known (a `triage-issues` handoff, or the user naming one directly) or, failing that, from matching the change against the repo's own open issues — never from asking the user or a placeholder. When no issue can be matched, the work ships with a plain, unprefixed name instead. See `docs/adr/0006` for why.
 
-This is enforced the same way `markdown-style` enforces its own convention — a `SessionStart` hook (`hooks/naming-convention.py`) injects it as standing context from the first turn of every session, so it applies to any branch/commit/PR you create, not only the ones made through `ship-pr`/`triage-issues`. Those two skills remain the source of truth for the exact commands (resolving the repo name, matching an issue, building the branch name); the hook is just the always-on reminder to follow them.
+The `ship-pr` and `triage-issues` skills own this convention — they carry the exact commands for resolving the repo name, matching an issue, and building the branch name, and they apply it to everything they create. Branches, commits and PRs you make outside those skills are on you.
 
 ## Why the confirm gate
 

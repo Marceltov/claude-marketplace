@@ -35,12 +35,7 @@ git ls-files '*.md' | xargs python3 "${CLAUDE_PLUGIN_ROOT}/hooks/unwrap-markdown
 
 ## How the plugin enforces this
 
-Two layers, because either alone is incomplete:
-
-| Layer | Hook | What it covers |
-| --- | --- | --- |
-| Instruction | `SessionStart` injects the convention as standing context | Prose is written unwrapped in the first place, with no skill invocation needed |
-| Correction | `PostToolUse` on `Write\|Edit` runs the unwrapper | Guarantees the result, and catches Markdown that arrived already wrapped |
+A `PostToolUse` hook on `Write|Edit` runs the unwrapper over every `.md` and `.markdown` file Claude writes. That guarantees the result whether or not this skill was loaded, and catches Markdown that arrived already wrapped.
 
 When the correction hook reports that it reformatted a file, re-read that file before editing it again — its line numbers have shifted.
 

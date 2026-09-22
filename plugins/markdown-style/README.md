@@ -15,14 +15,9 @@ Hard-wrapping Markdown at 80 or 100 columns makes diffs unreadable. Change one w
 
 ## What it does
 
-Two layers, because either on its own is incomplete. An instruction is advisory and does nothing about files that arrive already wrapped; a formatter alone only ever corrects after the fact.
+A `PostToolUse` hook on `Write|Edit` runs the unwrapper on every `.md` and `.markdown` file Claude writes, which guarantees the result whether or not the convention was in context — and catches files that arrived already wrapped, which an instruction never would.
 
-| Layer | Hook | Effect |
-| --- | --- | --- |
-| Instruction | `SessionStart` | Injects the convention as standing context, so Claude writes unwrapped prose from the first turn without needing to invoke a skill |
-| Correction | `PostToolUse` on `Write\|Edit` | Runs the unwrapper on every `.md` and `.markdown` file Claude writes, guaranteeing the result |
-
-The `markdown-style` skill carries the full convention and is available on demand, for example when you want to unwrap a file by hand or ask why something was reformatted.
+The `markdown-style` skill carries the full convention and is available on demand, for example when you want Claude to write it unwrapped in the first place, unwrap a file by hand, or ask why something was reformatted.
 
 ## What it never touches
 

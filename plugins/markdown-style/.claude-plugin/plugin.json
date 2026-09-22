@@ -1,6 +1,6 @@
 {
   "name": "markdown-style",
-  "description": "Keeps Markdown prose unwrapped: one physical line per paragraph, list item, table row and blockquote. Instructs Claude to write it that way, then rewrites any file that still comes out hard-wrapped, so a one-word edit never reflows a whole block.",
+  "description": "Keeps Markdown prose unwrapped: one physical line per paragraph, list item, table row and blockquote. A PostToolUse hook rewrites every Markdown file Claude writes that comes out hard-wrapped, so a one-word edit never reflows a whole block.",
   "version": "1.0.0",
   "author": {
     "name": "Marcel Bruckner",
