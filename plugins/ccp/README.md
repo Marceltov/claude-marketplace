@@ -1,6 +1,6 @@
 # ccp
 
-Code Collaboration Platform toolkit. The `ship-pr` skill ships uncommitted work end to end: branch, commit, PR, an ADR when the change is architecturally significant, and a merge that only happens after you explicitly confirm it. A `SessionStart` hook keeps the `<REPONAME> #<issue-number>` naming convention in context from the first turn; a `Stop` hook nudges you when work is left unshipped. Neither hook acts on its own. Slash commands round it out with one-shot GitHub/GitLab project-management views.
+Code Collaboration Platform toolkit. The `ship-pr` skill ships uncommitted work end to end: branch, commit, PR, an ADR when the change is architecturally significant, and a merge that only happens after you explicitly confirm it. A `SessionStart` hook keeps the `<REPONAME> #<issue-number>` naming convention in context from the first turn; it never acts on its own. Slash commands round it out with one-shot GitHub/GitLab project-management views.
 
 ## Install
 
@@ -28,10 +28,6 @@ This is enforced the same way `markdown-style` enforces its own convention — a
 ## Why the confirm gate
 
 Everything up to opening the PR is easy to undo — close the PR, delete the branch. Merging isn't, so it gets its own explicit approval every time, never inherited from an earlier "go ahead."
-
-## The nudge hook
-
-A `Stop` hook (`hooks/nudge-ship.py`) runs after every turn and checks for uncommitted changes, or a branch that's ahead of the default branch with no open PR. If it finds either, it shows a `systemMessage` — a warning printed to the user, not fed into Claude's context — suggesting the `ship-pr` skill. It never branches, commits, opens a PR, or merges by itself; it only ever surfaces a reminder. It stays quiet once a PR is already open and the tree is clean.
 
 ## Project-management commands
 
