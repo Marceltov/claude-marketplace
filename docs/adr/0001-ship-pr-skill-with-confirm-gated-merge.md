@@ -52,4 +52,4 @@ The chosen shape uses `systemMessage` only: a warning shown to the user in the t
 
 **Update (2026-09-22):** the `Stop` nudge hook described above was removed. The confirm-gated skill itself is unchanged; only the passive reminder is gone. The analysis of the three hook shapes is kept as the record of why a `Stop` hook must never run the sequence or block the turn, should the idea come back.
 
-**Update (2026-09-22, second):** the `markdown-style` plugin's own `SessionStart` instruction hook, cited above as the pattern this one mirrored, was removed for the same reason. Its `PostToolUse` unwrapper — a hook that changes the file rather than the context — is the surviving layer.
+**Update (2026-09-22, second):** the `markdown-style` plugin's hooks, cited above as the pattern this one mirrored, were removed too — first its `SessionStart` instruction, then its `PostToolUse` unwrapper. Neither plugin registers any hook now; both conventions live in skills, which load only when relevant. The `Stop`-event finding above stands on its own and is what this section is worth keeping for.

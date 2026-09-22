@@ -15,9 +15,9 @@ Hard-wrapping Markdown at 80 or 100 columns makes diffs unreadable. Change one w
 
 ## What it does
 
-A `PostToolUse` hook on `Write|Edit` runs the unwrapper on every `.md` and `.markdown` file Claude writes, which guarantees the result whether or not the convention was in context — and catches files that arrived already wrapped, which an instruction never would.
+The `markdown-style` skill carries the convention and loads on demand — when Claude writes Markdown, when a file arrives hard-wrapped and needs unwrapping, or when you ask why something was reformatted. `scripts/unwrap-markdown.py` does the actual rewriting.
 
-The `markdown-style` skill carries the full convention and is available on demand, for example when you want Claude to write it unwrapped in the first place, unwrap a file by hand, or ask why something was reformatted.
+Nothing runs automatically. An earlier version enforced this with a `PostToolUse` hook on every Markdown write; it was removed, so the convention now applies when the skill is in play rather than on every file unconditionally.
 
 ## What it never touches
 
@@ -30,18 +30,14 @@ The unwrapper is idempotent, so it is a no-op on files that are already clean.
 The formatter is a plain script with no dependencies beyond Python 3, so you can run it outside Claude Code:
 
 ```bash
-git ls-files '*.md' | xargs python3 hooks/unwrap-markdown.py
+git ls-files '*.md' | xargs python3 scripts/unwrap-markdown.py
 ```
 
 It prints the path of each file it changed and stays silent otherwise, which makes it usable as a CI check.
 
-## Turning it off for one project
+## When this is the wrong convention
 
-Some repositories deliberately wrap Markdown and enforce it in CI. There, this plugin fights the house style. Disable it in that repository's `.claude/settings.local.json`:
-
-```json
-{ "enabledPlugins": { "markdown-style@marceltov": false } }
-```
+Some repositories deliberately wrap Markdown and enforce it in CI. There, this convention fights the house style — follow the repo instead, and don't run the unwrapper over it.
 
 ## License
 
