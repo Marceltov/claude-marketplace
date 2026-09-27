@@ -14,7 +14,7 @@ If the current branch is the repo's default branch (`main`/`master`) and it has 
 
 ## 1. Determine the issue, then branch
 
-Every branch, commit, and PR this skill produces carries a `<REPONAME> #<issue-number>` prefix so work can be associated by name later — see ADR 0006 for why. Work out the prefix before naming anything:
+Every branch, commit, and PR this skill produces carries a `<REPONAME> #<issue-number>` prefix so work can be associated by name later — see ADR 0006 for why. Nothing ships without an issue; if none exists, this step creates one (ADR 0007). Work out the prefix before naming anything:
 
 **Issue number** — if it's already known (handed off from `triage-issues`, or the user named one directly, e.g. "fix issue #12"), use it as-is, no lookup needed. Otherwise, find it by asking the forge for open issues and matching one to the change about to be shipped:
 
@@ -23,7 +23,12 @@ gh issue list --state open --json number,title      # GitHub
 glab issue list -O json                              # GitLab
 ```
 
-Match the issue whose title/body clearly describes this change. If exactly one matches confidently, use its number. If none match, or more than one plausibly does, that's the corner case lookup can't resolve — fall back to shipping without the prefix rather than guessing or stalling on a question (`ponytail: keyword match against issue list, revisit if this misfires often`).
+Match the issue whose title/body clearly describes this change. If exactly one matches confidently, use its number. If none match, or more than one plausibly does, don't guess and don't stall on a question — create an issue describing the change and use its number (`ponytail: keyword match against issue list, revisit if this misfires often`):
+
+```bash
+gh issue create --title "<short imperative title>" --body "<what and why, 1-3 lines>"   # GitHub, prints the issue URL
+glab issue create --title "<short imperative title>" --description "<what and why>"   # GitLab
+```
 
 **Repo name** — uppercased, taken from the forge, not the local directory name:
 
@@ -40,13 +45,11 @@ Prefix = `<REPONAME> #<issue-number>`, e.g. `CLAUDE-MARKETPLACE #6`.
 git checkout -b <reponame-lowercase>-<issue-number>-<slug>
 ```
 
-If there's no issue number (the fallback case above), drop straight to a plain kebab-case slug, same as before this convention existed.
-
 ## 2. Commit
 
 Stage explicitly, never with a blanket `-A`/`.` without reviewing what it picks up — run `git status` after staging and check for anything that looks like a secret or an unrelated file before committing.
 
-Lead the commit message's first line with the prefix from step 1 — `<REPONAME> #<issue-number>: <message>`, e.g. `CLAUDE-MARKETPLACE #6: Add propose-skill skill to ccp` — then write it the same way you would for any commit in this session: focus on *why*, and keep whatever attribution trailer this session is already using. Skip the prefix (plain message) when step 1 fell back to no issue number.
+Lead the commit message's first line with the prefix from step 1 — `<REPONAME> #<issue-number>: <message>`, e.g. `CLAUDE-MARKETPLACE #6: Add propose-skill skill to ccp` — then write it the same way you would for any commit in this session: focus on *why*, and keep whatever attribution trailer this session is already using.
 
 If the changes naturally split into unrelated concerns, use separate commits rather than one commit that bundles them — but still one branch and one PR unless the user says otherwise.
 
@@ -82,7 +85,7 @@ EOF
 )"
 ```
 
-The PR title carries the same `<REPONAME> #<issue-number>:` prefix as the commit message (omit it if step 1 found no issue). Follow this session's existing PR conventions otherwise (attribution trailer, no placeholder sections). Whenever there's an issue number, include a closing reference in the body too — `Closes #<number>` on GitHub, `Closes #<iid>` on GitLab — so merging the PR closes the issue automatically. Report the PR URL back to the user.
+The PR title carries the same `<REPONAME> #<issue-number>:` prefix as the commit message. Follow this session's existing PR conventions otherwise (attribution trailer, no placeholder sections). Include a closing reference to the issue in the body too — `Closes #<number>` on GitHub, `Closes #<iid>` on GitLab — so merging the PR closes the issue automatically. Report the PR URL back to the user.
 
 ## 5. Confirm, then merge
 

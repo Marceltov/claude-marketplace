@@ -1,5 +1,5 @@
 ---
-status: "accepted"
+status: "accepted, no-issue fallback superseded by ADR-0007"
 date: 2026-09-18
 ---
 
