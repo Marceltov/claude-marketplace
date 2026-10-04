@@ -1,0 +1,10 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|clear|compact|resume",
+        "hooks": [{ "type": "command", "command": "cat \"${CLAUDE_PLUGIN_ROOT}/RULES.md\"" }]
+      }
+    ]
+  }
+}
