@@ -18,6 +18,8 @@ Then install what you want:
 /plugin install superpowers@marceltov
 /plugin install context7@marceltov
 /plugin install frontend-design@marceltov
+/plugin install playwright@marceltov
+/plugin install skill-creator@marceltov
 /plugin install superdesign@marceltov
 /plugin install trilium@marceltov
 /plugin install ponytail@marceltov
@@ -36,6 +38,8 @@ Or browse interactively with `/plugin`.
 | `superpowers` | Brainstorming, subagent-driven development, systematic debugging, red/green TDD, and skill authoring. | [obra/superpowers](https://github.com/obra/superpowers) |
 | `context7` | MCP server that pulls version-specific library docs straight from source repos into context. | [Upstash Context7](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/context7) |
 | `frontend-design` | Production-grade frontend interfaces that avoid generic AI aesthetics. | [Anthropic](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design) |
+| `playwright` | MCP server for browser automation and end-to-end testing: navigate pages, fill forms, click, take screenshots. | [Microsoft Playwright](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/playwright) |
+| `skill-creator` | Create new skills, improve existing ones, and measure skill performance with evals. | [Anthropic](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator) |
 | `superdesign` | Design or redesign UI and marketing graphics on the Superdesign infinite canvas. | [Superdesign](https://github.com/superdesigndev/superdesign-skill) |
 | `trilium` | Skills for working with Trilium notes, plus the MCP connection to a running trilium-mcp sidecar server. | [Marceltov/trilium-plugin](https://github.com/Marceltov/trilium-plugin) |
 | `ponytail` | Lazy senior dev mode: YAGNI, stdlib first, no unrequested abstractions. | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
