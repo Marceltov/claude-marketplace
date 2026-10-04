@@ -85,6 +85,39 @@
       "tags": ["frontend", "ui", "css", "design"]
     },
     {
+      "name": "playwright",
+      "description": "Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, click elements, and perform automated browser testing workflows.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "external_plugins/playwright",
+        "ref": "main"
+      },
+      "author": {
+        "name": "Microsoft"
+      },
+      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/playwright",
+      "category": "testing",
+      "tags": ["mcp", "browser", "testing", "automation"]
+    },
+    {
+      "name": "skill-creator",
+      "description": "Create new skills, improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, update or optimize an existing skill, run evals to test a skill, or benchmark skill performance with variance analysis.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/skill-creator",
+        "ref": "main"
+      },
+      "author": {
+        "name": "Anthropic",
+        "email": "support@anthropic.com"
+      },
+      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator",
+      "category": "development",
+      "tags": ["skills", "authoring", "evals"]
+    },
+    {
       "name": "superdesign",
       "description": "Design or redesign frontend UI and marketing graphics on the Superdesign infinite canvas. Reads your codebase for context, sets up a design system, and generates branchable design drafts you refine.",
       "source": {
