@@ -8,5 +8,6 @@ These apply in every repo. Where a repo's CLAUDE.md says otherwise, it wins.
 - Search from the most likely path outward; don't sweep unrelated directories.
 - No subagents unless asked. For search-only agents pass `model: haiku`.
 - Skip brainstorming for small, clearly specified changes.
+- When editing a CLAUDE.md, add only commands and non-obvious rules. Put task-specific detail (one-off recipes, style guides, background) in a skill or a docs file and link to it.
 - Replies: what changed and what's left. No preamble, no recap of the diff.
 </EXTREMELY_IMPORTANT>
