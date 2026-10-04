@@ -1,0 +1,13 @@
+{
+  "name": "rules",
+  "description": "General working rules injected into every session: small tool output, narrow reads and searches, no unasked subagents, short replies. Edit RULES.md to change them.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Marcel Bruckner",
+    "url": "https://github.com/marceltov"
+  },
+  "homepage": "https://github.com/Marceltov/claude-marketplace/tree/main/plugins/rules",
+  "repository": "https://github.com/Marceltov/claude-marketplace",
+  "license": "MIT",
+  "keywords": ["rules", "tokens", "context", "conventions"]
+}
