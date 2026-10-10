@@ -2,7 +2,7 @@
 
 A curated marketplace of the Claude Code plugins I actually use every day.
 
-Most entries point at their upstream repository — nothing is forked or vendored. The exceptions are `ccp` and `rules`, developed here under `plugins/` and distributed from this repo.
+Most entries point at their upstream repository — nothing is forked or vendored. The exceptions are `ccp`, `rules` and `docs`, developed here under `plugins/` and distributed from this repo.
 
 ## Install
 
@@ -15,6 +15,7 @@ Then install what you want:
 ```bash
 /plugin install ccp@marceltov
 /plugin install rules@marceltov
+/plugin install docs@marceltov
 /plugin install superpowers@marceltov
 /plugin install context7@marceltov
 /plugin install frontend-design@marceltov
@@ -35,6 +36,7 @@ Or browse interactively with `/plugin`.
 | --- | --- | --- |
 | `ccp` | Code Collaboration Platform: `ship-pr`, `resolve-conflicts`, `triage-issues` skills plus `/issues`, `/actions`, `/prs`, `/pr`, `/repo`, `/project` GitHub/GitLab view commands. | [this repo](plugins/ccp) |
 | `rules` | General working rules injected into every session: small tool output, narrow reads and searches, no unasked subagents, short replies. | [this repo](plugins/rules) |
+| `docs` | A documentation site with MkDocs and Material in the app's own colours, built with `--strict` and published with GitHub Pages: the `docs-site` skill. | [this repo](plugins/docs) |
 | `superpowers` | Brainstorming, subagent-driven development, systematic debugging, red/green TDD, and skill authoring. | [obra/superpowers](https://github.com/obra/superpowers) |
 | `context7` | MCP server that pulls version-specific library docs straight from source repos into context. | [Upstash Context7](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/context7) |
 | `frontend-design` | Production-grade frontend interfaces that avoid generic AI aesthetics. | [Anthropic](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design) |

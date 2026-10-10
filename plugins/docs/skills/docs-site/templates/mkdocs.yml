@@ -1,0 +1,77 @@
+# Made from the docs plugin's template (docs-site skill). Fill in: site_name, site_description, site_url, repo_url,
+# repo_name, the fonts, the nav.
+site_name: APP
+site_description: ONE SENTENCE ABOUT THE APP
+site_url: https://OWNER.github.io/REPO/
+repo_url: https://github.com/OWNER/REPO
+repo_name: OWNER/REPO
+edit_uri: edit/main/docs/
+
+# Working notes and decision records live under docs/ but are not pages.
+exclude_docs: |
+  adr/
+  agents/
+  superpowers/
+
+theme:
+  name: material
+  font:
+    text: Atkinson Hyperlegible Next
+    code: Atkinson Hyperlegible Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  logo: assets/icon.svg
+  favicon: assets/icon.svg
+  features:
+    - content.code.copy
+    - navigation.footer
+    - search.highlight
+    - navigation.sections
+    - navigation.indexes
+
+plugins:
+  - search
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.keys
+
+validation:
+  anchors: warn
+
+nav:
+  - Home: index.md
+  - Get started:
+      - Quick start: get-started/quick-start.md
+      - Concepts: get-started/concepts.md
+  - Using APP:
+      - PAGE: using/PAGE.md
+  - Integrations:
+      - PAGE: integrations/PAGE.md
+  - Self-hosting:
+      - Configuration: self-hosting/configuration.md
+      - Upgrading: self-hosting/upgrading.md
