@@ -19,7 +19,14 @@
       "repository": "https://github.com/Marceltov/claude-marketplace",
       "license": "MIT",
       "category": "development",
-      "tags": ["git", "pull-request", "workflow", "adr", "github", "gitlab"]
+      "tags": [
+        "git",
+        "pull-request",
+        "workflow",
+        "adr",
+        "github",
+        "gitlab"
+      ]
     },
     {
       "name": "rules",
@@ -33,7 +40,30 @@
       "repository": "https://github.com/Marceltov/claude-marketplace",
       "license": "MIT",
       "category": "productivity",
-      "tags": ["rules", "tokens", "context"]
+      "tags": [
+        "rules",
+        "tokens",
+        "context"
+      ]
+    },
+    {
+      "name": "docs",
+      "description": "A documentation site for a project, the way notefeed's is built: MkDocs with the Material theme, a light and dark palette derived from the app's own CSS tokens, the app's typeface, a GitHub Pages workflow that builds with --strict, and a page structure of home, get started, using, integrations and self-hosting. The docs-site skill sets it up in a repository that has none and extends one that has.",
+      "source": "./plugins/docs",
+      "author": {
+        "name": "Marcel Bruckner",
+        "url": "https://github.com/marceltov"
+      },
+      "homepage": "https://github.com/Marceltov/claude-marketplace/tree/main/plugins/docs",
+      "repository": "https://github.com/Marceltov/claude-marketplace",
+      "license": "MIT",
+      "category": "documentation",
+      "tags": [
+        "docs",
+        "mkdocs",
+        "material",
+        "github-pages"
+      ]
     },
     {
       "name": "superpowers",
@@ -49,7 +79,13 @@
       "homepage": "https://github.com/obra/superpowers",
       "repository": "https://github.com/obra/superpowers",
       "category": "development",
-      "tags": ["workflow", "tdd", "debugging", "code-review", "skills"]
+      "tags": [
+        "workflow",
+        "tdd",
+        "debugging",
+        "code-review",
+        "skills"
+      ]
     },
     {
       "name": "context7",
@@ -65,7 +101,11 @@
       },
       "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/context7",
       "category": "development",
-      "tags": ["mcp", "documentation", "reference"]
+      "tags": [
+        "mcp",
+        "documentation",
+        "reference"
+      ]
     },
     {
       "name": "frontend-design",
@@ -82,7 +122,12 @@
       },
       "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design",
       "category": "design",
-      "tags": ["frontend", "ui", "css", "design"]
+      "tags": [
+        "frontend",
+        "ui",
+        "css",
+        "design"
+      ]
     },
     {
       "name": "playwright",
@@ -98,7 +143,12 @@
       },
       "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/playwright",
       "category": "testing",
-      "tags": ["mcp", "browser", "testing", "automation"]
+      "tags": [
+        "mcp",
+        "browser",
+        "testing",
+        "automation"
+      ]
     },
     {
       "name": "skill-creator",
@@ -115,7 +165,11 @@
       },
       "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator",
       "category": "development",
-      "tags": ["skills", "authoring", "evals"]
+      "tags": [
+        "skills",
+        "authoring",
+        "evals"
+      ]
     },
     {
       "name": "superdesign",
@@ -131,7 +185,12 @@
       "homepage": "https://superdesign.dev",
       "repository": "https://github.com/superdesigndev/superdesign-skill",
       "category": "design",
-      "tags": ["design", "ui", "canvas", "frontend"]
+      "tags": [
+        "design",
+        "ui",
+        "canvas",
+        "frontend"
+      ]
     },
     {
       "name": "trilium",
@@ -148,7 +207,12 @@
       "repository": "https://github.com/Marceltov/trilium-plugin",
       "license": "MIT",
       "category": "productivity",
-      "tags": ["trilium", "notes", "mcp", "skills"]
+      "tags": [
+        "trilium",
+        "notes",
+        "mcp",
+        "skills"
+      ]
     },
     {
       "name": "ponytail",
@@ -164,7 +228,11 @@
       "homepage": "https://github.com/DietrichGebert/ponytail",
       "repository": "https://github.com/DietrichGebert/ponytail",
       "category": "development",
-      "tags": ["yagni", "simplicity", "code-quality"]
+      "tags": [
+        "yagni",
+        "simplicity",
+        "code-quality"
+      ]
     },
     {
       "name": "i-have-adhd",
@@ -180,7 +248,11 @@
       "homepage": "https://github.com/ayghri/i-have-adhd",
       "repository": "https://github.com/ayghri/i-have-adhd",
       "category": "productivity",
-      "tags": ["output-style", "accessibility", "focus"]
+      "tags": [
+        "output-style",
+        "accessibility",
+        "focus"
+      ]
     },
     {
       "name": "notfair",
@@ -196,7 +268,13 @@
       "homepage": "https://github.com/nowork-studio/notfair-plugin",
       "repository": "https://github.com/nowork-studio/notfair-plugin",
       "category": "marketing",
-      "tags": ["seo", "geo", "ads", "analytics", "marketing"]
+      "tags": [
+        "seo",
+        "geo",
+        "ads",
+        "analytics",
+        "marketing"
+      ]
     }
   ]
 }
