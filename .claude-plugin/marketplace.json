@@ -135,7 +135,7 @@
     },
     {
       "name": "trilium",
-      "description": "Claude Code plugin for Trilium: skills for working with your notes, plus the MCP connection to a running trilium-mcp sidecar server.",
+      "description": "Claude Code plugin for Trilium Notes: skills for working with your notes, plus the MCP connection to a running Trilium Notes MCP server.",
       "source": {
         "source": "github",
         "repo": "Marceltov/trilium-plugin"
