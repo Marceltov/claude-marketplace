@@ -151,18 +151,18 @@
       "tags": ["trilium", "notes", "mcp", "skills"]
     },
     {
-      "name": "paperless",
-      "description": "Claude Code plugin for Paperless-ngx: skills for cleaning up the inbox, removing duplicates, unlocking encrypted PDFs, searching and editing metadata, plus the MCP connection to a running paperless-mcp sidecar server.",
+      "name": "paperless-ngx",
+      "description": "Claude Code plugin for Paperless-ngx: skills for cleaning up the inbox, removing duplicates, unlocking encrypted PDFs, searching and editing metadata, plus the MCP connection to a running Paperless-ngx MCP server.",
       "source": {
         "source": "github",
-        "repo": "Marceltov/paperless-plugin"
+        "repo": "Marceltov/paperless-ngx-plugin"
       },
       "author": {
         "name": "Marcel Bruckner",
         "url": "https://github.com/marceltov"
       },
-      "homepage": "https://github.com/Marceltov/paperless-plugin",
-      "repository": "https://github.com/Marceltov/paperless-plugin",
+      "homepage": "https://github.com/Marceltov/paperless-ngx-plugin",
+      "repository": "https://github.com/Marceltov/paperless-ngx-plugin",
       "license": "MIT",
       "category": "productivity",
       "tags": ["paperless", "paperless-ngx", "documents", "mcp", "skills"]
