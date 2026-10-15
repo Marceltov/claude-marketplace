@@ -22,6 +22,7 @@ Then install what you want:
 /plugin install skill-creator@marceltov
 /plugin install superdesign@marceltov
 /plugin install trilium@marceltov
+/plugin install paperless@marceltov
 /plugin install ponytail@marceltov
 /plugin install i-have-adhd@marceltov
 /plugin install notfair@marceltov
@@ -42,6 +43,7 @@ Or browse interactively with `/plugin`.
 | `skill-creator` | Create new skills, improve existing ones, and measure skill performance with evals. | [Anthropic](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator) |
 | `superdesign` | Design or redesign UI and marketing graphics on the Superdesign infinite canvas. | [Superdesign](https://github.com/superdesigndev/superdesign-skill) |
 | `trilium` | Skills for working with Trilium notes, plus the MCP connection to a running trilium-mcp sidecar server. | [Marceltov/trilium-plugin](https://github.com/Marceltov/trilium-plugin) |
+| `paperless` | Skills for Paperless-ngx: clean up the inbox, remove duplicates, unlock encrypted PDFs, search and edit metadata, plus the MCP connection to a running paperless-mcp sidecar server. | [Marceltov/paperless-plugin](https://github.com/Marceltov/paperless-plugin) |
 | `ponytail` | Lazy senior dev mode: YAGNI, stdlib first, no unrequested abstractions. | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
 | `i-have-adhd` | ADHD-friendly output: next action first, numbered steps, no tangents. | [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) |
 | `notfair` | Ads, analytics, SEO and GEO workflows (Google/Meta/TikTok Ads, GA4, Search Console, WordPress). | [nowork-studio/notfair-plugin](https://github.com/nowork-studio/notfair-plugin) |
