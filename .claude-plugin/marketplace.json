@@ -151,6 +151,23 @@
       "tags": ["trilium", "notes", "mcp", "skills"]
     },
     {
+      "name": "trilium-llm-wiki",
+      "description": "Build and maintain an LLM wiki in Trilium Notes after Karpathy's pattern: you collect sources, Claude writes interlinked summary, concept, entity and hub pages, answers from them and lints them. Includes the MCP connection setup.",
+      "source": {
+        "source": "github",
+        "repo": "Marceltov/trilium-llm-wiki"
+      },
+      "author": {
+        "name": "Marcel Bruckner",
+        "url": "https://github.com/marceltov"
+      },
+      "homepage": "https://trilium-llm-wiki.marceltov.de/",
+      "repository": "https://github.com/Marceltov/trilium-llm-wiki",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": ["trilium", "llm-wiki", "mcp", "knowledge-base"]
+    },
+    {
       "name": "paperless-ngx",
       "description": "Claude Code plugin for Paperless-ngx: skills for cleaning up the inbox, removing duplicates, unlocking encrypted PDFs, searching and editing metadata, plus the MCP connection to a running Paperless-ngx MCP server.",
       "source": {
