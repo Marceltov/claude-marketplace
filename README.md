@@ -43,6 +43,7 @@ Or browse interactively with `/plugin`.
 | `skill-creator` | Create new skills, improve existing ones, and measure skill performance with evals. | [Anthropic](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator) |
 | `superdesign` | Design or redesign UI and marketing graphics on the Superdesign infinite canvas. | [Superdesign](https://github.com/superdesigndev/superdesign-skill) |
 | `trilium` | Skills for working with your notes in Trilium Notes, plus the MCP connection to a running Trilium Notes MCP server. | [Marceltov/trilium-plugin](https://github.com/Marceltov/trilium-plugin) |
+| `trilium-llm-wiki` | Builds and maintains an LLM wiki in Trilium Notes (Karpathy's pattern): sources in, linked summary, concept, entity and hub pages out, with query, lint and review. | [Marceltov/trilium-llm-wiki](https://github.com/Marceltov/trilium-llm-wiki) |
 | `paperless-ngx` | Skills for Paperless-ngx: clean up the inbox, remove duplicates, unlock encrypted PDFs, search and edit metadata, plus the MCP connection to a running Paperless-ngx MCP server. | [Marceltov/paperless-ngx-plugin](https://github.com/Marceltov/paperless-ngx-plugin) |
 | `ponytail` | Lazy senior dev mode: YAGNI, stdlib first, no unrequested abstractions. | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
 | `i-have-adhd` | ADHD-friendly output: next action first, numbered steps, no tangents. | [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) |
