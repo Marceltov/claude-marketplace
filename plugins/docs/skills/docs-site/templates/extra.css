@@ -1,0 +1,25 @@
+/* The palette block comes first: paste the output of scripts/palette.py here. What follows is the same in every site. */
+
+/* Screenshots of the app: framed like a window instead of a flat box. No display/margin on the img itself: that would
+   override Material's #only-light/#only-dark hiding. */
+.md-typeset p:has(> img[src*="assets/screenshot-"]) {
+  text-align: center;
+  margin: 1.5em 0 2em;
+}
+
+.md-typeset img[src*="assets/screenshot-"] {
+  max-width: min(100%, 36rem);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.6rem;
+  box-shadow: 0 0.6rem 2rem rgb(0 0 0 / 12%);
+}
+
+[data-md-color-scheme="slate"] .md-typeset img[src*="assets/screenshot-"] {
+  box-shadow: 0 0.6rem 2rem rgb(0 0 0 / 45%);
+}
+
+/* Tables whose first column is a name in code (settings, tools, fields): keep it on one line. */
+.md-typeset td:first-child > code {
+  white-space: nowrap;
+  word-break: normal;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "docs",
+  "description": "A documentation site for a project, the way notefeed's is built: MkDocs with the Material theme, a light and dark palette derived from the app's own CSS tokens, the app's typeface, a GitHub Pages workflow that builds with --strict, and a page structure of home, get started, using, integrations and self-hosting. The docs-site skill sets it up in a repository that has none and extends one that has.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Marcel Bruckner",
+    "url": "https://github.com/marceltov"
+  },
+  "homepage": "https://github.com/Marceltov/claude-marketplace/tree/main/plugins/docs",
+  "repository": "https://github.com/Marceltov/claude-marketplace",
+  "license": "MIT",
+  "keywords": ["docs", "mkdocs", "material", "github-pages", "documentation"]
+}
