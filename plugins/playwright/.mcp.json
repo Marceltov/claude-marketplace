@@ -1,0 +1,10 @@
+{
+  "playwright": {
+    "command": "npx",
+    "args": ["@playwright/mcp@latest"]
+  },
+  "playwright-headless": {
+    "command": "npx",
+    "args": ["@playwright/mcp@latest", "--headless", "--isolated"]
+  }
+}
