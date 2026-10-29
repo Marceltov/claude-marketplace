@@ -86,17 +86,15 @@
     },
     {
       "name": "playwright",
-      "description": "Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, click elements, and perform automated browser testing workflows.",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/anthropics/claude-plugins-official.git",
-        "path": "external_plugins/playwright",
-        "ref": "main"
-      },
+      "description": "Browser automation and end-to-end testing MCP server by Microsoft, as a headed and a headless instance. Enables Claude to interact with web pages, take screenshots, fill forms, click elements, and perform automated browser testing workflows.",
+      "source": "./plugins/playwright",
       "author": {
-        "name": "Microsoft"
+        "name": "Marcel Bruckner",
+        "url": "https://github.com/marceltov"
       },
-      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/playwright",
+      "homepage": "https://github.com/Marceltov/claude-marketplace/tree/main/plugins/playwright",
+      "repository": "https://github.com/Marceltov/claude-marketplace",
+      "license": "MIT",
       "category": "testing",
       "tags": ["mcp", "browser", "testing", "automation"]
     },
