@@ -2,7 +2,7 @@
 
 A curated marketplace of the Claude Code plugins I actually use every day.
 
-Most entries point at their upstream repository — nothing is forked or vendored. The exceptions are `ccp`, `rules` and `playwright`, developed here under `plugins/` and distributed from this repo.
+Most entries point at their upstream repository — nothing is forked or vendored. The exceptions are `ccp`, `rules`, `playwright` and `notefeed`, developed here under `plugins/` and distributed from this repo.
 
 ## Install
 
@@ -19,6 +19,7 @@ Then install what you want:
 /plugin install context7@marceltov
 /plugin install frontend-design@marceltov
 /plugin install playwright@marceltov
+/plugin install notefeed@marceltov
 /plugin install skill-creator@marceltov
 /plugin install superdesign@marceltov
 /plugin install trilium@marceltov
@@ -40,6 +41,7 @@ Or browse interactively with `/plugin`.
 | `context7` | MCP server that pulls version-specific library docs straight from source repos into context. | [Upstash Context7](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/context7) |
 | `frontend-design` | Production-grade frontend interfaces that avoid generic AI aesthetics. | [Anthropic](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design) |
 | `playwright` | MCP server for browser automation and end-to-end testing: navigate pages, fill forms, click, take screenshots. Registered as `playwright` (visible window) and `playwright-headless` (no window, does not take focus). | [this repo](plugins/playwright) |
+| `notefeed` | MCP server for [notefeed](https://notefeed.me): markdown notes and RSS. Signs in through OAuth via `/mcp`. | [this repo](plugins/notefeed) |
 | `skill-creator` | Create new skills, improve existing ones, and measure skill performance with evals. | [Anthropic](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator) |
 | `superdesign` | Design or redesign UI and marketing graphics on the Superdesign infinite canvas. | [Superdesign](https://github.com/superdesigndev/superdesign-skill) |
 | `trilium` | Skills for working with your notes in Trilium Notes, plus the MCP connection to a running Trilium Notes MCP server. | [Marceltov/trilium-plugin](https://github.com/Marceltov/trilium-plugin) |

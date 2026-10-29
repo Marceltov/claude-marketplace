@@ -1,0 +1,6 @@
+{
+  "notefeed": {
+    "type": "http",
+    "url": "https://notefeed.me/mcp"
+  }
+}

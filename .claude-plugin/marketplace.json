@@ -99,6 +99,20 @@
       "tags": ["mcp", "browser", "testing", "automation"]
     },
     {
+      "name": "notefeed",
+      "description": "MCP server for notefeed: markdown notes and RSS. Post from where you need it, follow where you want.",
+      "source": "./plugins/notefeed",
+      "author": {
+        "name": "Marcel Bruckner",
+        "url": "https://github.com/marceltov"
+      },
+      "homepage": "https://github.com/Marceltov/claude-marketplace/tree/main/plugins/notefeed",
+      "repository": "https://github.com/Marceltov/claude-marketplace",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": ["mcp", "notes", "markdown", "rss"]
+    },
+    {
       "name": "skill-creator",
       "description": "Create new skills, improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, update or optimize an existing skill, run evals to test a skill, or benchmark skill performance with variance analysis.",
       "source": {

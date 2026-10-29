@@ -1,0 +1,13 @@
+{
+  "name": "notefeed",
+  "description": "MCP server for notefeed: markdown notes and RSS. Post from where you need it, follow where you want.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Marcel Bruckner",
+    "url": "https://github.com/marceltov"
+  },
+  "homepage": "https://github.com/Marceltov/claude-marketplace/tree/main/plugins/notefeed",
+  "repository": "https://github.com/Marceltov/claude-marketplace",
+  "license": "MIT",
+  "keywords": ["mcp", "notes", "markdown", "rss"]
+}
