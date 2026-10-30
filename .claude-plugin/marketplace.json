@@ -19,21 +19,36 @@
       "repository": "https://github.com/Marceltov/claude-marketplace",
       "license": "MIT",
       "category": "development",
-      "tags": ["git", "pull-request", "workflow", "adr", "github", "gitlab"]
+      "tags": [
+        "git",
+        "pull-request",
+        "workflow",
+        "adr",
+        "github",
+        "gitlab"
+      ]
     },
     {
-      "name": "rules",
-      "description": "General working rules injected into every session: small tool output, narrow reads and searches, no unasked subagents, short replies.",
-      "source": "./plugins/rules",
+      "name": "engineering-conventions",
+      "description": "Marcel Bruckner's engineering conventions (architecture, code, repository setup, stacks) and the working rules every session gets at its start: small tool output, narrow reads and searches, no unasked subagents, short replies. Skills to apply the conventions and to add to them.",
+      "source": {
+        "source": "github",
+        "repo": "Marceltov/engineering-conventions"
+      },
       "author": {
         "name": "Marcel Bruckner",
         "url": "https://github.com/marceltov"
       },
-      "homepage": "https://github.com/Marceltov/claude-marketplace/tree/main/plugins/rules",
-      "repository": "https://github.com/Marceltov/claude-marketplace",
-      "license": "MIT",
-      "category": "productivity",
-      "tags": ["rules", "tokens", "context"]
+      "homepage": "https://marceltov.github.io/engineering-conventions/",
+      "repository": "https://github.com/Marceltov/engineering-conventions",
+      "license": "CC-BY-4.0",
+      "category": "development",
+      "tags": [
+        "rules",
+        "conventions",
+        "context",
+        "architecture"
+      ]
     },
     {
       "name": "superpowers",
@@ -49,7 +64,13 @@
       "homepage": "https://github.com/obra/superpowers",
       "repository": "https://github.com/obra/superpowers",
       "category": "development",
-      "tags": ["workflow", "tdd", "debugging", "code-review", "skills"]
+      "tags": [
+        "workflow",
+        "tdd",
+        "debugging",
+        "code-review",
+        "skills"
+      ]
     },
     {
       "name": "context7",
@@ -65,7 +86,11 @@
       },
       "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/context7",
       "category": "development",
-      "tags": ["mcp", "documentation", "reference"]
+      "tags": [
+        "mcp",
+        "documentation",
+        "reference"
+      ]
     },
     {
       "name": "frontend-design",
@@ -82,7 +107,12 @@
       },
       "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design",
       "category": "design",
-      "tags": ["frontend", "ui", "css", "design"]
+      "tags": [
+        "frontend",
+        "ui",
+        "css",
+        "design"
+      ]
     },
     {
       "name": "playwright",
@@ -96,7 +126,12 @@
       "repository": "https://github.com/Marceltov/claude-marketplace",
       "license": "MIT",
       "category": "testing",
-      "tags": ["mcp", "browser", "testing", "automation"]
+      "tags": [
+        "mcp",
+        "browser",
+        "testing",
+        "automation"
+      ]
     },
     {
       "name": "notefeed",
@@ -110,7 +145,12 @@
       "repository": "https://github.com/Marceltov/claude-marketplace",
       "license": "MIT",
       "category": "productivity",
-      "tags": ["mcp", "notes", "markdown", "rss"]
+      "tags": [
+        "mcp",
+        "notes",
+        "markdown",
+        "rss"
+      ]
     },
     {
       "name": "skill-creator",
@@ -127,7 +167,11 @@
       },
       "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator",
       "category": "development",
-      "tags": ["skills", "authoring", "evals"]
+      "tags": [
+        "skills",
+        "authoring",
+        "evals"
+      ]
     },
     {
       "name": "superdesign",
@@ -143,7 +187,12 @@
       "homepage": "https://superdesign.dev",
       "repository": "https://github.com/superdesigndev/superdesign-skill",
       "category": "design",
-      "tags": ["design", "ui", "canvas", "frontend"]
+      "tags": [
+        "design",
+        "ui",
+        "canvas",
+        "frontend"
+      ]
     },
     {
       "name": "trilium",
@@ -160,7 +209,12 @@
       "repository": "https://github.com/Marceltov/trilium-plugin",
       "license": "MIT",
       "category": "productivity",
-      "tags": ["trilium", "notes", "mcp", "skills"]
+      "tags": [
+        "trilium",
+        "notes",
+        "mcp",
+        "skills"
+      ]
     },
     {
       "name": "trilium-llm-wiki",
@@ -177,7 +231,12 @@
       "repository": "https://github.com/Marceltov/trilium-llm-wiki",
       "license": "MIT",
       "category": "productivity",
-      "tags": ["trilium", "llm-wiki", "mcp", "knowledge-base"]
+      "tags": [
+        "trilium",
+        "llm-wiki",
+        "mcp",
+        "knowledge-base"
+      ]
     },
     {
       "name": "paperless-ngx",
@@ -194,7 +253,13 @@
       "repository": "https://github.com/Marceltov/paperless-ngx-plugin",
       "license": "MIT",
       "category": "productivity",
-      "tags": ["paperless", "paperless-ngx", "documents", "mcp", "skills"]
+      "tags": [
+        "paperless",
+        "paperless-ngx",
+        "documents",
+        "mcp",
+        "skills"
+      ]
     },
     {
       "name": "ponytail",
@@ -210,7 +275,11 @@
       "homepage": "https://github.com/DietrichGebert/ponytail",
       "repository": "https://github.com/DietrichGebert/ponytail",
       "category": "development",
-      "tags": ["yagni", "simplicity", "code-quality"]
+      "tags": [
+        "yagni",
+        "simplicity",
+        "code-quality"
+      ]
     },
     {
       "name": "i-have-adhd",
@@ -226,7 +295,11 @@
       "homepage": "https://github.com/ayghri/i-have-adhd",
       "repository": "https://github.com/ayghri/i-have-adhd",
       "category": "productivity",
-      "tags": ["output-style", "accessibility", "focus"]
+      "tags": [
+        "output-style",
+        "accessibility",
+        "focus"
+      ]
     },
     {
       "name": "notfair",
@@ -242,7 +315,13 @@
       "homepage": "https://github.com/nowork-studio/notfair-plugin",
       "repository": "https://github.com/nowork-studio/notfair-plugin",
       "category": "marketing",
-      "tags": ["seo", "geo", "ads", "analytics", "marketing"]
+      "tags": [
+        "seo",
+        "geo",
+        "ads",
+        "analytics",
+        "marketing"
+      ]
     }
   ]
 }
