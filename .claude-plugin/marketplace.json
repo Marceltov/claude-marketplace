@@ -262,6 +262,29 @@
       ]
     },
     {
+      "name": "passageway",
+      "description": "Retrieval for Claude over MCP: connectors feed your sources' passages to a local index, and a relevance gate keeps recall quiet when nothing fits. Skills install and run the server, connect Claude Code to it, add sources, check its status, measure retrieval quality and write connectors; a prompt hook brings the right passages along.",
+      "source": {
+        "source": "github",
+        "repo": "Marceltov/passageway"
+      },
+      "author": {
+        "name": "Marcel Bruckner",
+        "url": "https://github.com/marceltov"
+      },
+      "homepage": "https://passageway.marceltov.de/",
+      "repository": "https://github.com/Marceltov/passageway",
+      "license": "AGPL-3.0-or-later",
+      "category": "productivity",
+      "tags": [
+        "mcp",
+        "retrieval",
+        "rag",
+        "connectors",
+        "skills"
+      ]
+    },
+    {
       "name": "ponytail",
       "description": "Lazy senior dev mode. Forces the simplest, shortest solution that actually works: YAGNI, stdlib first, no unrequested abstractions.",
       "source": {
