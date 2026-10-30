@@ -24,6 +24,7 @@ Then install what you want:
 /plugin install superdesign@marceltov
 /plugin install trilium@marceltov
 /plugin install paperless-ngx@marceltov
+/plugin install passageway@marceltov
 /plugin install ponytail@marceltov
 /plugin install i-have-adhd@marceltov
 /plugin install notfair@marceltov
@@ -47,6 +48,7 @@ Or browse interactively with `/plugin`.
 | `trilium` | Skills for working with your notes in Trilium Notes, plus the MCP connection to a running Trilium Notes MCP server. | [Marceltov/trilium-plugin](https://github.com/Marceltov/trilium-plugin) |
 | `trilium-llm-wiki` | Builds and maintains an LLM wiki in Trilium Notes (Karpathy's pattern): sources in, linked summary, concept, entity and hub pages out, with query, lint and review. | [Marceltov/trilium-llm-wiki](https://github.com/Marceltov/trilium-llm-wiki) |
 | `paperless-ngx` | Skills for Paperless-ngx: clean up the inbox, remove duplicates, unlock encrypted PDFs, search and edit metadata, plus the MCP connection to a running Paperless-ngx MCP server. | [Marceltov/paperless-ngx-plugin](https://github.com/Marceltov/paperless-ngx-plugin) |
+| `passageway` | Retrieval for Claude over MCP: connectors feed your sources' passages to a local index; skills install and run the server, connect Claude Code, add sources and check its status. | [Marceltov/passageway](https://github.com/Marceltov/passageway) |
 | `ponytail` | Lazy senior dev mode: YAGNI, stdlib first, no unrequested abstractions. | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
 | `i-have-adhd` | ADHD-friendly output: next action first, numbered steps, no tangents. | [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) |
 | `notfair` | Ads, analytics, SEO and GEO workflows (Google/Meta/TikTok Ads, GA4, Search Console, WordPress). | [nowork-studio/notfair-plugin](https://github.com/nowork-studio/notfair-plugin) |
