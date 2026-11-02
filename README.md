@@ -32,6 +32,10 @@ Then install what you want:
 
 Or browse interactively with `/plugin`.
 
+## Updates
+
+Every entry that points at another repository is pinned to a commit (`source.sha`). A daily workflow (`.github/workflows/pin-plugins.yml`, also runnable by hand) moves the pin when the plugin's `version` changed, so installs, including those made through claude.ai, see the update within a day. A plugin ships a change by bumping its `version`. Why: [ADR 0010](docs/adr/0010-pin-github-plugins-by-sha.md).
+
 ## Plugins
 
 | Plugin | What it does | Upstream |
