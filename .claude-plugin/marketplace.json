@@ -33,7 +33,8 @@
       "description": "Marcel Bruckner's engineering conventions (architecture, code, repository setup, stacks) and the working rules every session gets at its start: small tool output, narrow reads and searches, no unasked subagents, short replies. Skills to apply the conventions and to add to them.",
       "source": {
         "source": "github",
-        "repo": "Marceltov/engineering-conventions"
+        "repo": "Marceltov/engineering-conventions",
+        "sha": "2ad980ee5798704b225c3ac57aaabc4bab388672"
       },
       "author": {
         "name": "Marcel Bruckner",
@@ -55,7 +56,8 @@
       "description": "Teaches Claude brainstorming, subagent-driven development with built-in code review, systematic debugging, and red/green TDD. Also teaches Claude how to author and test new skills.",
       "source": {
         "source": "github",
-        "repo": "obra/superpowers"
+        "repo": "obra/superpowers",
+        "sha": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b"
       },
       "author": {
         "name": "Jesse Vincent",
@@ -199,7 +201,8 @@
       "description": "Claude Code plugin for Trilium Notes: skills for working with your notes, plus the MCP connection to a running Trilium Notes MCP server.",
       "source": {
         "source": "github",
-        "repo": "Marceltov/trilium-plugin"
+        "repo": "Marceltov/trilium-plugin",
+        "sha": "4a5c258747403e546446df339e02c71fb57add4c"
       },
       "author": {
         "name": "Marcel Bruckner",
@@ -221,7 +224,8 @@
       "description": "Build and maintain an LLM wiki in Trilium Notes after Karpathy's pattern: you collect sources, Claude writes interlinked summary, concept, entity and hub pages, answers from them and lints them. Includes the MCP connection setup.",
       "source": {
         "source": "github",
-        "repo": "Marceltov/trilium-llm-wiki"
+        "repo": "Marceltov/trilium-llm-wiki",
+        "sha": "109dcb8e16e7dba8b2b3b98252c7e3c16d5e0a3f"
       },
       "author": {
         "name": "Marcel Bruckner",
@@ -243,7 +247,8 @@
       "description": "Claude Code plugin for Paperless-ngx: skills for cleaning up the inbox, removing duplicates, unlocking encrypted PDFs, searching and editing metadata, plus the MCP connection to a running Paperless-ngx MCP server.",
       "source": {
         "source": "github",
-        "repo": "Marceltov/paperless-ngx-plugin"
+        "repo": "Marceltov/paperless-ngx-plugin",
+        "sha": "c7a5d1724767dbcaaddb010bc62e688627a21880"
       },
       "author": {
         "name": "Marcel Bruckner",
@@ -266,7 +271,8 @@
       "description": "Retrieval for Claude over MCP: connectors feed your sources' passages to a local index, and a relevance gate keeps recall quiet when nothing fits. Skills install and run the server, connect Claude Code to it, add sources, check its status, measure retrieval quality and write connectors; a prompt hook brings the right passages along.",
       "source": {
         "source": "github",
-        "repo": "Marceltov/passageway"
+        "repo": "Marceltov/passageway",
+        "sha": "902620e5abec53074fdcba01e2566150f92c623c"
       },
       "author": {
         "name": "Marcel Bruckner",
@@ -289,7 +295,8 @@
       "description": "Lazy senior dev mode. Forces the simplest, shortest solution that actually works: YAGNI, stdlib first, no unrequested abstractions.",
       "source": {
         "source": "github",
-        "repo": "DietrichGebert/ponytail"
+        "repo": "DietrichGebert/ponytail",
+        "sha": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846"
       },
       "author": {
         "name": "Dietrich Gebert",
@@ -309,7 +316,8 @@
       "description": "Shape Claude Code output for an ADHD reader: lead with the next action, number steps, suppress tangents, restate state, make wins visible.",
       "source": {
         "source": "github",
-        "repo": "ayghri/i-have-adhd"
+        "repo": "ayghri/i-have-adhd",
+        "sha": "1ecea1993b7fce257ffbd686c070948b5e07eda6"
       },
       "author": {
         "name": "Ayoub G.",
@@ -329,7 +337,8 @@
       "description": "The official ads, analytics, SEO, and GEO plugin from NotFair. Operate Google, Meta, X, LinkedIn, Reddit, and TikTok Ads; WordPress and GoHighLevel; analyze Google Search Console and GA4; and run open-source search and content workflows.",
       "source": {
         "source": "github",
-        "repo": "nowork-studio/notfair-plugin"
+        "repo": "nowork-studio/notfair-plugin",
+        "sha": "ed835f273dce03a451c13fa0cb67305ae58ecb05"
       },
       "author": {
         "name": "NotFair",

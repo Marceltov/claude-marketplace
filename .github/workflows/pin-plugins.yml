@@ -1,0 +1,50 @@
+# Moves each GitHub-sourced plugin's pinned commit when its version changed (scripts/pin_plugins.py, ADR 0010), so
+# installs made through claude.ai see the update. Daily, and by hand from the Actions tab.
+name: Pin plugins
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+  pull_request:
+    paths: ["scripts/**", ".claude-plugin/marketplace.json", ".github/workflows/pin-plugins.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pin-plugins
+  cancel-in-progress: false
+
+jobs:
+  pin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tests
+        run: python3 -m unittest discover -s scripts
+
+      - name: Pin
+        id: pin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          # On a pull request only report; the pin is written on main.
+          if [ "${{ github.event_name }}" = pull_request ]; then
+            python3 scripts/pin_plugins.py --check
+          else
+            python3 scripts/pin_plugins.py | tee pin.log
+          fi
+
+      - name: Commit
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          git diff --quiet && { echo "Nothing moved."; exit 0; }
+          names=$(tail -n 1 pin.log | sed 's/^changed: //')
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "CLAUDE-MARKETPLACE #38: Pin ${names} to their new versions" -m "$(head -n -1 pin.log)"
+          git push
