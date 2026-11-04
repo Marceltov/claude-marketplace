@@ -18,7 +18,7 @@ The entries that point at another repository (engineering-conventions, trilium, 
 
 ## Decision Outcome
 
-Chosen: option 1. `scripts/pin_plugins.py` sets each GitHub entry's `source.sha` to the head of its branch (`source.ref`, else the default branch) when the `version` in that repository's `.claude-plugin/plugin.json` differs from the version at the pinned commit. `.github/workflows/pin-plugins.yml` runs it daily at 04:17 UTC and by hand, and commits the change to `main` as `CLAUDE-MARKETPLACE #38: Pin <names> to their new versions`. On a pull request it runs the tests and only reports.
+Chosen: option 1. `scripts/pin_plugins.py` sets each GitHub entry's `source.sha` to the head of its branch (`source.ref`, else the default branch) when the `version` in that repository's `.claude-plugin/plugin.json` differs from the version at the pinned commit. `.github/workflows/pin-plugins.yml` runs it every hour at minute 17 (daily at 04:17 UTC until 2026-11-04, #40) and by hand, and commits the change to `main` as `CLAUDE-MARKETPLACE #38: Pin <names> to their new versions`. On a pull request it runs the tests and only reports.
 
 Option 2 needs a token with write access here in every plugin repository, three of which are not Marcel's. Option 3 would end "nothing is forked or vendored" for the upstream plugins and split each plugin's history. Option 4 is what failed.
 
