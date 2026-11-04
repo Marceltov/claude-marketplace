@@ -1,10 +1,10 @@
 # Moves each GitHub-sourced plugin's pinned commit when its version changed (scripts/pin_plugins.py, ADR 0010), so
-# installs made through claude.ai see the update. Daily, and by hand from the Actions tab.
+# installs made through claude.ai see the update. Hourly, and by hand from the Actions tab.
 name: Pin plugins
 
 on:
   schedule:
-    - cron: "17 4 * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
   pull_request:
     paths: ["scripts/**", ".claude-plugin/marketplace.json", ".github/workflows/pin-plugins.yml"]
