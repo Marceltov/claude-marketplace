@@ -34,7 +34,7 @@
       "source": {
         "source": "github",
         "repo": "Marceltov/engineering-conventions",
-        "sha": "9278cd5876314af2c559478a1eb2588706af6422"
+        "sha": "d320055870b17712d962f8c4c86b5551eb33fcac"
       },
       "author": {
         "name": "Marcel Bruckner",
@@ -57,7 +57,7 @@
       "source": {
         "source": "github",
         "repo": "obra/superpowers",
-        "sha": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b"
+        "sha": "22f0b463e7a5e579904dd6211a520321035526f7"
       },
       "author": {
         "name": "Jesse Vincent",
@@ -272,7 +272,7 @@
       "source": {
         "source": "github",
         "repo": "Marceltov/passageway",
-        "sha": "902620e5abec53074fdcba01e2566150f92c623c"
+        "sha": "1b73930581098b70fd494b331fda718e00c2dd5a"
       },
       "author": {
         "name": "Marcel Bruckner",
