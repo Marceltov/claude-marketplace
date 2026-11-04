@@ -34,7 +34,7 @@ Or browse interactively with `/plugin`.
 
 ## Updates
 
-Every entry that points at another repository is pinned to a commit (`source.sha`). An hourly workflow (`.github/workflows/pin-plugins.yml`, also runnable by hand) moves the pin when the plugin's `version` changed, so installs, including those made through claude.ai, see the update within the hour. A plugin ships a change by bumping its `version`. Why: [ADR 0010](docs/adr/0010-pin-github-plugins-by-sha.md).
+Every entry that points at another repository is pinned to a commit (`source.sha`). An hourly workflow (`.github/workflows/pin-plugins.yml`, also runnable by hand) moves the pin when the plugin's `version` changed, so installs, including those made through claude.ai, see the update within the hour. Our own plugins (engineering-conventions, trilium, trilium-llm-wiki, paperless-ngx, passageway) also start that workflow themselves when their `version` changes on `main`, so their update is pinned within a minute. A plugin ships a change by bumping its `version`. Why: [ADR 0010](docs/adr/0010-pin-github-plugins-by-sha.md), [ADR 0011](docs/adr/0011-our-plugins-start-the-pin.md).
 
 ## Plugins
 
