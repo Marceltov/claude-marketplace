@@ -271,15 +271,15 @@
       "description": "Retrieval for Claude over MCP: connectors feed your sources' passages to a local index, and a relevance gate keeps recall quiet when nothing fits. Skills install and run the server, connect Claude Code to it, add sources, check its status, measure retrieval quality and write connectors; a prompt hook brings the right passages along.",
       "source": {
         "source": "github",
-        "repo": "Marceltov/passageway",
-        "sha": "1b73930581098b70fd494b331fda718e00c2dd5a"
+        "repo": "getpassageway/passageway",
+        "sha": "9a54b4efe7cbf13df37eca88ca35e4d429f0cfc0"
       },
       "author": {
         "name": "Marcel Bruckner",
         "url": "https://github.com/marceltov"
       },
-      "homepage": "https://passageway.marceltov.de/",
-      "repository": "https://github.com/Marceltov/passageway",
+      "homepage": "https://getpassageway.com/",
+      "repository": "https://github.com/getpassageway/passageway",
       "license": "AGPL-3.0-or-later",
       "category": "productivity",
       "tags": [
