@@ -28,6 +28,7 @@ Then install what you want:
 /plugin install ponytail@marceltov
 /plugin install i-have-adhd@marceltov
 /plugin install notfair@marceltov
+/plugin install mattpocock-skills@marceltov
 ```
 
 Or browse interactively with `/plugin`.
@@ -56,6 +57,7 @@ Every entry that points at another repository is pinned to a commit (`source.sha
 | `ponytail` | Lazy senior dev mode: YAGNI, stdlib first, no unrequested abstractions. | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
 | `i-have-adhd` | ADHD-friendly output: next action first, numbered steps, no tangents. | [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) |
 | `notfair` | Ads, analytics, SEO and GEO workflows (Google/Meta/TikTok Ads, GA4, Search Console, WordPress). | [nowork-studio/notfair-plugin](https://github.com/nowork-studio/notfair-plugin) |
+| `mattpocock-skills` | Matt Pocock's engineering skills: grilling, spec/ticket flows, TDD, code review, domain modelling, prototyping, research. | [mattpocock/skills](https://github.com/mattpocock/skills) |
 
 > The plugin upstream calls itself `notfair`, not `not-fair` — plugin names must match the upstream `plugin.json`, so that is the name used here.
 
