@@ -202,7 +202,7 @@
       "source": {
         "source": "github",
         "repo": "Marceltov/trilium-plugin",
-        "sha": "4a5c258747403e546446df339e02c71fb57add4c"
+        "sha": "ea209881a6f549a463279c703f5ee5989803f6aa"
       },
       "author": {
         "name": "Marcel Bruckner",
@@ -225,7 +225,7 @@
       "source": {
         "source": "github",
         "repo": "Marceltov/trilium-llm-wiki",
-        "sha": "2b750584da6c2389a5fb011607597c73e89be0f4"
+        "sha": "0bdd621b19c13d9a14c4195a2c8ceef2195ab5b7"
       },
       "author": {
         "name": "Marcel Bruckner",
